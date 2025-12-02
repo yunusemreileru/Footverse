@@ -1,0 +1,181 @@
+/* ============================================================
+   ART STUDIO – TEMPLATE TYPES (Theme Engine v3 Clean Final)
+============================================================ */
+
+/* SOL PANEL */
+.studio-main-frame .types-list-panel {
+    border-right: 1px solid var(--colors_border);
+    padding-right: var(--spacing_lg);
+}
+
+/* LİSTE BAŞLIĞI */
+.type-list-header {
+    margin-bottom: var(--spacing_md);
+}
+
+.type-add-btn {
+    width: fit-content;
+    text-decoration: none !important;
+    display: inline-flex;
+}
+
+/* ALT BAŞLIK */
+.type-list-title {
+    margin-top: -8px;
+    margin-bottom: var(--spacing_sm);
+    color: var(--text_title);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ============================================================
+   TYPE CARD – KESİNLEŞMİŞ KOMPAKT TASARIM
+============================================================ */
+
+.type-card-item {
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+.type-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing_sm) var(--spacing_md);
+}
+
+.type-card-main {
+    color: var(--text_body);
+    text-decoration: none !important;
+}
+
+.type-card-code {
+    font-size: 11px;
+    opacity: 0.7;
+    letter-spacing: 0.1em;
+}
+
+.type-card-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text_title);
+}
+
+/* Sağ taraf: statü + ikonlar */
+.type-card-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing_md);
+}
+
+/* İkon butonları */
+.fv-btn--icon {
+    padding: 4px 6px !important;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: var(--radius_sm);
+}
+
+.fv-btn--danger-text {
+    color: var(--colors_danger) !important;
+}
+
+.type-card-actions {
+    display: flex;
+    gap: 6px;
+}
+
+/* Statü ikonu */
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: var(--spacing_xs);
+}
+
+.status-active {
+    background: var(--colors_success);
+}
+
+.status-passive {
+    background: var(--colors_danger);
+}
+
+/* ============================================================
+   DETAY SAYFASI — GRID LAYOUT
+============================================================ */
+
+.detail-box {
+    padding-top: var(--spacing_md);
+}
+
+.detail-row {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: var(--spacing_sm);
+    align-items: start;
+}
+
+.detail-label {
+    color: var(--text_muted);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.detail-value {
+    font-size: 14px;
+    color: var(--text_body);
+}
+
+/* Template Üret butonu */
+.detail-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: var(--spacing_md);
+}
+
+/* ============================================================
+   FORM ACTIONS – BUTONLARI YAN YANA GETİR
+============================================================ */
+
+.form-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: var(--spacing_sm);
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-actions .fv-btn {
+    width: auto !important;
+    min-width: 120px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 992px) {
+    .studio-main-frame .types-list-panel {
+        border-right: none;
+        border-bottom: 1px solid var(--colors_border);
+        padding-bottom: var(--spacing_md);
+    }
+}
+
+/* HOVER: Kartın üzerine gelince */
+.type-card-item:hover {
+    background: var(--colors_surface_alt);
+    border-color: var(--colors_primary);
+    box-shadow: var(--shadow_md);
+}
+
+/* SEÇİLİ KART */
+.type-card-item.fv-card--active {
+    background: color-mix(in srgb, var(--colors_primary) 12%, transparent);
+    border: 2px solid var(--colors_primary);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--colors_primary) 40%, transparent);
+}

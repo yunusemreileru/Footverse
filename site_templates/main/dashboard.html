@@ -1,0 +1,24 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'main/css/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container fv-panel">
+
+    <h1 class="fv-heading">Footverse v2</h1>
+
+    <p>Yeni tema sistemi (Theme Engine v3) başarıyla entegre edildi.</p>
+    <p>Artık tüm bileşenler fv- sınıfları üzerinden otomatik olarak temaya uyumlu.</p>
+    <p>Bu altyapı üzerine tüm modülleri (Core, Settings, Art Studio) inşa edeceğiz.</p>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'main/js/dashboard.js' %}"></script>
+{% endblock %}

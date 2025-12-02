@@ -1,0 +1,303 @@
+/* =========================================
+   FOOTVERSE UI COMPONENTS
+   Tema JSON (theme_schema) tabanlı UI katmanı
+   ========================================= */
+
+/* TYPOGRAPHY */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font_heading_font, var(--font_body_font, Inter));
+  color: var(--text_palette_title);
+  margin-top: 0;
+
+  font-weight: var(--font_bold, 600);
+  font-style: var(--font_italic, normal);
+  text-decoration: var(--font_underline, none);
+
+  letter-spacing: var(--font_letter_spacing, normal);
+  line-height: var(--font_line_height, 1.2);
+}
+
+p, span, li, a, div, input, select, textarea {
+  font-family: var(--font_body_font, Inter);
+  letter-spacing: var(--font_letter_spacing, normal);
+  line-height: var(--font_line_height, 1.4);
+}
+
+code, pre {
+  font-family: var(--font_monospace_font, "Fira Code", monospace);
+}
+
+/* ========== BUTTONS ========== */
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-accent,
+.btn-danger,
+.btn-info,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing_gap_small);
+  padding: var(--spacing_padding_small) var(--spacing_padding_large);
+
+  border-radius: var(--borders_radius_medium);
+  border: none;
+  cursor: pointer;
+
+  font-family: var(--font_body_font, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 14px;
+  font-weight: 600;
+
+  box-shadow: var(--effects_shadow_light);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color_palette_primary);
+  color: var(--text_palette_inverse);
+}
+
+.btn-secondary {
+  background: var(--color_palette_secondary);
+  color: var(--text_palette_inverse);
+}
+
+.btn-accent {
+  background: var(--color_palette_accent_a);
+  color: var(--text_palette_inverse);
+}
+
+.btn-danger {
+  background: var(--color_palette_danger);
+  color: var(--text_palette_inverse);
+}
+
+.btn-info {
+  background: var(--color_palette_info);
+  color: var(--text_palette_inverse);
+}
+
+.btn-outline {
+  background: transparent;
+  border: var(--borders_thin_solid);
+  color: var(--color_palette_primary);
+  box-shadow: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--effects_shadow_medium);
+}
+
+/* ========== CARDS ========== */
+
+.card {
+  background: var(--layout_card_bg, var(--layout_content_bg));
+  color: var(--layout_card_text, var(--layout_content_text));
+  border-radius: var(--borders_radius_medium);
+  border: var(--borders_thin_solid);
+  box-shadow: var(--effects_shadow_light);
+
+  padding: var(--spacing_padding_large);
+  box-sizing: border-box;
+}
+
+.card-header {
+  margin-bottom: var(--spacing_gap_normal);
+  font-weight: 600;
+  color: var(--text_palette_title);
+}
+
+.card-subtitle {
+  margin-bottom: var(--spacing_gap_small);
+  font-size: 13px;
+  color: var(--text_palette_muted);
+}
+
+.card-body {
+  font-size: 14px;
+}
+
+/* ========== BADGES / TAGS ========== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: var(--borders_radius_soft);
+
+  background: var(--color_palette_neutral_dark);
+  color: var(--text_palette_inverse);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.badge-success {
+  background: var(--color_palette_success);
+}
+
+.badge-danger {
+  background: var(--color_palette_danger);
+}
+
+.badge-warning {
+  background: var(--color_palette_warning);
+  color: #000;
+}
+
+.badge-info {
+  background: var(--color_palette_info);
+}
+
+/* ========== FORM ELEMENTS ========== */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: var(--spacing_padding_small) var(--spacing_padding_normal);
+  border-radius: var(--borders_radius_soft);
+  border: var(--borders_thin_solid);
+
+  background: var(--layout_content_bg);
+  color: var(--layout_content_text);
+
+  font-family: var(--font_body_font, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+  font-size: 14px;
+
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border: var(--borders_medium_solid);
+  box-shadow: var(--effects_glow_subtle);
+}
+
+/* Checkbox / radio */
+input[type="checkbox"],
+input[type="radio"] {
+  accent-color: var(--color_palette_primary);
+}
+
+/* ========== TABLES ========== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th,
+.table td {
+  padding: var(--spacing_padding_small) var(--spacing_padding_normal);
+  border-bottom: var(--borders_thin_solid);
+}
+
+.table th {
+  text-align: left;
+  background: var(--color_palette_neutral_light);
+  color: var(--text_palette_title);
+}
+
+.table tbody tr:hover {
+  background: var(--color_palette_neutral_light);
+}
+
+/* ========== UTILITIES: SHADOWS ========== */
+
+.shadow-light {
+  box-shadow: var(--effects_shadow_light);
+}
+
+.shadow-medium {
+  box-shadow: var(--effects_shadow_medium);
+}
+
+.shadow-strong {
+  box-shadow: var(--effects_shadow_strong);
+}
+
+.shadow-neon {
+  box-shadow: var(--effects_neon_glow);
+}
+
+/* ========== UTILITIES: RADIUS ========== */
+
+.radius-soft {
+  border-radius: var(--borders_radius_soft);
+}
+
+.radius-medium {
+  border-radius: var(--borders_radius_medium);
+}
+
+.radius-hard {
+  border-radius: var(--borders_radius_hard);
+}
+
+/* ========== UTILITIES: SPACING ========== */
+
+.gap-small {
+  gap: var(--spacing_gap_small);
+}
+
+.gap-normal {
+  gap: var(--spacing_gap_normal);
+}
+
+.gap-large {
+  gap: var(--spacing_gap_large);
+}
+
+.p-small {
+  padding: var(--spacing_padding_small);
+}
+
+.p-normal {
+  padding: var(--spacing_padding_normal);
+}
+
+.p-large {
+  padding: var(--spacing_padding_large);
+}
+
+/* ========== GRADIENT DEMO BACKGROUNDS ========== */
+
+.bg-gradient-primary {
+  background: var(--gradients_gradient_primary);
+}
+
+.bg-gradient-secondary {
+  background: var(--gradients_gradient_secondary);
+}
+
+.bg-gradient-gold {
+  background: var(--gradients_gradient_gold);
+}
+
+.bg-gradient-silver {
+  background: var(--gradients_gradient_silver);
+}
+
+.bg-gradient-bronze {
+  background: var(--gradients_gradient_bronze);
+}
+
+.debug-font-box {
+    padding: 8px 12px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--text_palette_title);
+    font-family: var(--font_body_font);
+}

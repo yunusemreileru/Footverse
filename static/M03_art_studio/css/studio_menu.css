@@ -1,0 +1,133 @@
+/* ============================================================
+   ART STUDIO MENU — Theme Engine v3
+   Premium glass-style + modern UI Engine v3 uyumu
+============================================================ */
+
+/* MENÜ BAR */
+.studio-menu-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing_lg);
+    margin-top: var(--spacing_md);
+    align-items: center;
+}
+
+/* MENU ITEM WRAPPER */
+.studio-menu-item-wrapper {
+    position: relative;
+}
+
+/* MAIN BUTTON */
+.studio-menu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing_sm);
+
+    padding: 8px 14px;
+    font-size: 14px;
+    font-weight: 600;
+
+    background: var(--colors_surface_alt);
+    border: 1px solid var(--colors_border);
+    border-radius: var(--radius_sm);
+    color: var(--text_body);
+
+    box-shadow: var(--shadow_sm);
+    cursor: pointer;
+    user-select: none;
+
+    transition: background var(--fv-anim-normal),
+                color var(--fv-anim-normal),
+                transform var(--fv-anim-fast);
+}
+
+.studio-menu-item:hover {
+    background: var(--colors_primary);
+    color: var(--text_inverse);
+    transform: translateY(-2px);
+}
+
+/* SUBMENU PANEL */
+.studio-submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    margin-top: var(--spacing_sm);
+    padding: var(--spacing_md);
+
+    background: color-mix(in srgb, var(--colors_surface) 70%, transparent);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+
+    border: 1px solid var(--colors_border);
+    border-radius: var(--radius_md);
+    box-shadow: var(--shadow_md);
+
+    min-width: 260px;
+    z-index: 999;
+}
+
+/* OPEN STATE */
+.studio-submenu.open {
+    display: block;
+}
+
+/* SUBMENU GROUP TITLE */
+.submenu-group-title {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+
+    color: var(--text_muted);
+    margin-top: var(--spacing_sm);
+    margin-bottom: var(--spacing_sm);
+}
+
+/* SUBMENU ITEM */
+.submenu-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing_sm);
+
+    padding: 8px 10px;
+    border-radius: var(--radius_sm);
+
+    color: var(--text_body);
+    font-size: 14px;
+    text-decoration: none;
+
+    transition: background var(--fv-anim-normal),
+                color var(--fv-anim-normal),
+                transform var(--fv-anim-fast);
+}
+
+.submenu-item:hover {
+    background: color-mix(in srgb, var(--colors_primary) 20%, transparent);
+    color: var(--colors_primary);
+    transform: translateX(4px);
+}
+
+/* SUBMENU ICON */
+.submenu-icon {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* LABEL */
+.submenu-text {
+    font-weight: 500;
+}
+
+/* 🔥 DROPDOWN'UN ALTINA GİRMESİN DİYE ANA FRAME'İ DÜZELT */
+.studio-main-frame {
+    overflow: visible !important;
+    z-index: 1 !important;
+}
+
+/* 🔥 DROPDOWN HER ZAMAN EN ÜSTTE */
+.studio-submenu {
+    z-index: 999999 !important;
+}

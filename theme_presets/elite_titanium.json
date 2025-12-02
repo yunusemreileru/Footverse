@@ -1,0 +1,66 @@
+{
+  "schema_version": "3.2",
+  "meta": {
+    "code": "elite_titanium",
+    "name": "Elite Titanium",
+    "author": "Footverse",
+    "version": "1.0"
+  },
+
+  "colors": {
+    "primary": "#6C7A89",
+    "secondary": "#95A5A6",
+    "accent": "#E0E4E5",
+    "background": "#0E0F10",
+    "surface": "#1B1D20",
+    "surface_alt": "#2A2D31",
+    "border": "#3A3F45",
+    "success": "#2ECC71",
+    "warning": "#F1C40F",
+    "danger": "#E74C3C",
+    "info": "#3498DB",
+    "neutral": "#DADDE0"
+  },
+
+  "text": {
+    "title": "#E0E4E5",
+    "subtitle": "#BFC4C8",
+    "body": "#D7DBDE",
+    "muted": "#9CA1A6",
+    "inverse": "#000000"
+  },
+
+  "radius": { "sm": "3px", "md": "8px", "lg": "14px" },
+  "shadow": {
+    "sm": "0 1px 2px rgba(0,0,0,0.3)",
+    "md": "0 3px 10px rgba(0,0,0,0.45)",
+    "lg": "0 10px 24px rgba(0,0,0,0.6)"
+  },
+
+  "spacing": { "sm": "6px", "md": "12px", "lg": "20px" },
+
+  "surface_levels": {
+    "level_1": "#1B1D20",
+    "level_2": "#23262B",
+    "level_3": "#2C3036",
+    "level_4": "#353A42"
+  },
+
+  "semantic": {
+    "button_primary_bg": "#6C7A89",
+    "button_primary_text": "#FFFFFF",
+    "button_secondary_bg": "#2A2D31",
+    "button_secondary_text": "#E0E4E5",
+    "button_ghost_text": "#E0E4E5",
+    "card_bg": "#1B1D20",
+    "card_border": "#3A3F45",
+    "panel_bg": "#1B1D20",
+    "panel_border": "#3A3F45"
+  },
+
+  "font": {
+    "heading": "Oswald",
+    "body": "Inter",
+    "mono": "Fira Code"
+  }
+}

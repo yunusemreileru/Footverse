@@ -1,0 +1,18 @@
+.dashboard-container {
+    background: var(--layout_card_bg);
+    color: var(--layout_card_text);
+    padding: 20px;
+    border-radius: var(--borders_radius_medium);
+    border: var(--borders_thin_solid);
+    box-shadow: var(--effects_shadow_light);
+}
+
+.dashboard-container h1 {
+    margin-bottom: 15px;
+    color: var(--text_palette_title);
+}
+
+.dashboard-container p {
+    margin-bottom: 6px;
+    color: var(--text_palette_body);
+}

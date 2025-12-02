@@ -1,0 +1,71 @@
+<div class="fv-panel fv-stack fv-stack--lg">
+
+    <h2 class="fv-heading">
+        {% if mode == "create" %}Yeni Template Type Oluştur
+        {% elif mode == "edit" %}Template Type Düzenle
+        {% elif mode == "delete" %}Template Type Sil
+        {% endif %}
+    </h2>
+
+    {% if mode == "delete" %}
+
+        <p>
+            <strong>{{ selected.name }}</strong> tipini silmek üzeresiniz.
+        </p>
+
+        <form method="POST" class="fv-form">
+            {% csrf_token %}
+
+            <div class="form-actions">
+                <button type="submit" class="fv-btn fv-btn--danger">Evet, Sil</button>
+
+                <a href="{% url 'art_studio:template_type_detail' selected.id %}"
+                class="fv-btn fv-btn--secondary">Vazgeç</a>
+            </div>
+        </form>
+
+    {% else %}
+
+        <form method="POST" class="fv-form fv-stack fv-stack--md">
+            {% csrf_token %}
+
+            <div class="fv-form-group fv-stack fv-stack--sm">
+                <label for="{{ form.code.id_for_label }}">Kod</label>
+                {{ form.code }}
+            </div>
+
+            <div class="fv-form-group fv-stack fv-stack--sm">
+                <label for="{{ form.name.id_for_label }}">Ad</label>
+                {{ form.name }}
+            </div>
+
+            <div class="fv-form-group fv-stack fv-stack--sm">
+                <label for="{{ form.description.id_for_label }}">Açıklama</label>
+                {{ form.description }}
+            </div>
+
+            <div class="fv-form-group fv-form-inline">
+                <label class="fv-label">
+                    {{ form.is_active }} Aktif
+                </label>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="fv-btn fv-btn--primary">Kaydet</button>
+
+                {% if mode == "edit" %}
+                    <a href="{% url 'art_studio:template_type_detail' selected.id %}"
+                       class="fv-btn fv-btn--secondary">Vazgeç</a>
+                {% else %}
+                    <a href="{% url 'art_studio:template_type_list' %}"
+                       class="fv-btn fv-btn--secondary">Vazgeç</a>
+                {% endif %}
+
+                <button type="reset" class="fv-btn fv-btn--ghost">Temizle</button>
+            </div>
+
+        </form>
+
+    {% endif %}
+
+</div>

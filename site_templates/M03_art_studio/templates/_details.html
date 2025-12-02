@@ -1,0 +1,245 @@
+{% with p=selected.params %}
+<div class="fv-panel fv-stack fv-stack--lg">
+
+    <!-- ÜST BLOK: Başlık + Detay + Preview yan yana grid -->
+    <div class="templates-detail-grid">
+
+        <!-- SOL: Başlık + Detay Bilgileri -->
+        <div class="detail-box fv-stack fv-stack--md">
+
+            <h2 class="fv-heading detail-title">{{ selected.name }}</h2>
+
+            <div class="detail-row">
+                <div class="detail-label">Template Type</div>
+                <div class="detail-value">
+                    {{ selected.template_type.name }} ({{ selected.template_type.code }})
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Kod</div>
+                <div class="detail-value">{{ selected.code }}</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Ad</div>
+                <div class="detail-value">{{ selected.name }}</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Açıklama</div>
+                <div class="detail-value">
+                    {{ selected.description|default:"-" }}
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Versiyon</div>
+                <div class="detail-value">{{ selected.version|default:"v1" }}</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Aktif mi?</div>
+                <div class="detail-value">
+                    {% if selected.is_active %}
+                        <span class="status-dot status-active"></span> Aktif
+                    {% else %}
+                        <span class="status-dot status-passive"></span> Pasif
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Görünür Bileşenler</div>
+                <div class="detail-value">
+                    {% if selected.show_stars %}⭐ Yıldızlar {% endif %}
+                    {% if selected.show_platform %}🏟️ Platform {% endif %}
+                    {% if selected.show_icon %}🎯 İkon {% endif %}
+                    {% if selected.show_effects %}✨ Efekt {% endif %}
+                    {% if not selected.show_stars and not selected.show_platform and not selected.show_icon and not selected.show_effects %}
+                        -
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Oluşturulma</div>
+                <div class="detail-value">
+                    {{ selected.created_at|date:"d.m.Y H:i" }}
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="detail-label">Son Güncelleme</div>
+                <div class="detail-value">
+                    {{ selected.updated_at|date:"d.m.Y H:i" }}
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SAĞ: Preview Paneli -->
+        <div class="template-preview-panel fv-stack fv-stack--md">
+            <div class="detail-label">Preview</div>
+            <div class="template-preview-box fv-panel fv-surface">
+                {% if svg_preview %}
+                    {{ svg_preview|safe }}
+                {% else %}
+                    <div class="empty-state">
+                        <p>Bu template için önizleme üretilemedi.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ALT BLOK: Parametreler – TABLI GÖRÜNÜM -->
+    <div class="template-params-section">
+
+        <div class="detail-label">Parametreler</div>
+
+        <!-- Sekme başlıkları -->
+        <div class="tpl-param-tabs">
+            <button type="button"
+                    class="tpl-param-tab is-active"
+                    data-tab="shape">
+                Şekil &amp; Renk
+            </button>
+            <button type="button"
+                    class="tpl-param-tab"
+                    data-tab="icon">
+                İkon &amp; Yıldızlar
+            </button>
+            <button type="button"
+                    class="tpl-param-tab"
+                    data-tab="effects">
+                Efekt &amp; Layout
+            </button>
+            <button type="button"
+                    class="tpl-param-tab"
+                    data-tab="raw">
+                Ham JSON
+            </button>
+        </div>
+
+        <!-- Sekme içerikleri -->
+        <div class="tpl-param-panels">
+
+            <!-- Şekil & Renk -->
+            <div class="tpl-param-panel is-active" data-tab="shape">
+                <div class="param-row">
+                    <div class="param-label">Şekil tipi</div>
+                    <div class="param-value">{{ p.shape.type|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Şekil boyutu</div>
+                    <div class="param-value">{{ p.shape.size|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Dolgu rengi</div>
+                    <div class="param-value">
+                        {{ p.colors.fill|default:"-" }}
+                    </div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Stroke rengi</div>
+                    <div class="param-value">
+                        {{ p.colors.stroke|default:"-" }}
+                    </div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Stroke kalınlığı</div>
+                    <div class="param-value">
+                        {{ p.colors.stroke_width|default:"-" }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- İkon & Yıldızlar -->
+            <div class="tpl-param-panel" data-tab="icon">
+                <div class="param-row">
+                    <div class="param-label">İkon dosyası</div>
+                    <div class="param-value">{{ p.icon.src|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">İkon boyutu</div>
+                    <div class="param-value">{{ p.icon.size|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">İkon X / Y ofset</div>
+                    <div class="param-value">
+                        {{ p.icon.offset_x|default:"-" }} / {{ p.icon.offset_y|default:"-" }}
+                    </div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Yıldız sayısı</div>
+                    <div class="param-value">{{ p.stars.count|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Yıldız boyutu</div>
+                    <div class="param-value">{{ p.stars.size|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Yıldız aralığı</div>
+                    <div class="param-value">{{ p.stars.gap|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Yıldız rengi</div>
+                    <div class="param-value">{{ p.stars.color|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Yıldız border rengi</div>
+                    <div class="param-value">{{ p.stars.border_color|default:"-" }}</div>
+                </div>
+            </div>
+
+            <!-- Efekt & Layout -->
+            <div class="tpl-param-panel" data-tab="effects">
+                <div class="param-row">
+                    <div class="param-label">Glow blur</div>
+                    <div class="param-value">{{ p.effect.blur|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Glow tipi</div>
+                    <div class="param-value">{{ p.effect.type|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Glow rengi</div>
+                    <div class="param-value">{{ p.effect.color|default:"-" }}</div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Layout boyutu</div>
+                    <div class="param-value">
+                        {{ p.layout.size|default:"-" }}
+                    </div>
+                </div>
+                <div class="param-row">
+                    <div class="param-label">Layout padding</div>
+                    <div class="param-value">
+                        {{ p.layout.padding|default:"-" }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ham JSON -->
+            <div class="tpl-param-panel" data-tab="raw">
+                <pre class="fv-code-block">
+{{ p|default:"{}" }}
+                </pre>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Alt aksiyon -->
+    <div class="detail-actions">
+        <a href="#"
+           class="fv-btn fv-btn--primary">
+            Object Üret
+        </a>
+    </div>
+
+</div>
+{% endwith %}

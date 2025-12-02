@@ -1,0 +1,62 @@
+{
+  "schema_version": "3.2",
+  "meta": {
+    "code": "galaxy_neon",
+    "name": "Galaxy Neon",
+    "author": "Footverse",
+    "version": "1.0"
+  },
+
+  "colors": {
+    "primary": "#6A00FF",
+    "secondary": "#00E1FF",
+    "accent": "#FF00C8",
+    "background": "#0A0013",
+    "surface": "#140026",
+    "surface_alt": "#1E0034",
+    "border": "#3C1A5A",
+    "success": "#00FFA3",
+    "warning": "#FFC900",
+    "danger": "#FF2E63",
+    "info": "#10A7FF",
+    "neutral": "#C6C6C6"
+  },
+
+  "text": {
+    "title": "#FFFFFF",
+    "subtitle": "#D9B9FF",
+    "body": "#EDE5F7",
+    "muted": "#A890C0",
+    "inverse": "#000"
+  },
+
+  "radius": { "sm": "4px", "md": "8px", "lg": "16px" },
+  "shadow": {
+    "sm": "0 1px 2px rgba(106,0,255,0.25)",
+    "md": "0 3px 10px rgba(106,0,255,0.35)",
+    "lg": "0 8px 20px rgba(106,0,255,0.45)"
+  },
+
+  "spacing": { "sm": "6px", "md": "12px", "lg": "20px" },
+
+  "surface_levels": {
+    "level_1": "#140026",
+    "level_2": "#1E0034",
+    "level_3": "#290042",
+    "level_4": "#330050"
+  },
+
+  "semantic": {
+    "button_primary_bg": "#6A00FF",
+    "button_primary_text": "#FFFFFF",
+    "button_secondary_bg": "#1E0034",
+    "button_secondary_text": "#D9B9FF",
+    "button_ghost_text": "#D9B9FF",
+    "card_bg": "#140026",
+    "card_border": "#3C1A5A",
+    "panel_bg": "#140026",
+    "panel_border": "#3C1A5A"
+  },
+
+  "font": { "heading": "Poppins", "body": "Inter", "mono": "JetBrains Mono" }
+}

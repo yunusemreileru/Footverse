@@ -1,0 +1,54 @@
+<div class="fv-panel fv-stack fv-stack--lg">
+
+    <!-- Başlık -->
+    <h2 class="fv-heading">{{ selected.name }} - {{ selected.code }}</h2>
+
+    <!-- Detay Bilgileri -->
+    <div class="detail-box fv-stack fv-stack--md">
+
+        <div class="detail-row">
+            <div class="detail-label">Kod:</div>
+            <div class="detail-value">{{ selected.code }}</div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Ad:</div>
+            <div class="detail-value">{{ selected.name }}</div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Açıklama:</div>
+            <div class="detail-value">
+                {{ selected.description|default:"-" }}
+            </div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Aktif mi?</div>
+            <div class="detail-value">
+                {% if selected.is_active %}
+                    <span class="status-dot status-active"></span> Aktif
+                {% else %}
+                    <span class="status-dot status-passive"></span> Pasif
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-label">Oluşturulma Tarihi:</div>
+            <div class="detail-value">
+                {{ selected.created_at|date:"d.m.Y H:i" }}
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Template Üret Butonu -->
+    <div class="detail-actions">
+        <a href="{% url 'art_studio:template_create' %}?type={{ selected.id }}"
+        class="fv-btn fv-btn--primary">
+            Template Üret
+        </a>
+    </div>
+
+</div>

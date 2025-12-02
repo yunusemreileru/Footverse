@@ -1,0 +1,14 @@
+body {
+    font-family: var(--font_body_font, Inter);
+    color: var(--body_text, var(--body));
+    background: var(--body_bg, var(--neutral_dark));
+}
+
+a {
+    color: var(--link_color, var(--primary));
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--link_hover, var(--highlight));
+}

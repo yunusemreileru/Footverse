@@ -1,0 +1,66 @@
+{
+  "schema_version": "3.2",
+  "meta": {
+    "code": "pure_light",
+    "name": "Pure Light",
+    "author": "Footverse",
+    "version": "1.0"
+  },
+
+  "colors": {
+    "primary": "#4A77FF",
+    "secondary": "#8AA8FF",
+    "accent": "#667AFF",
+    "background": "#F7F8FC",
+    "surface": "#FFFFFF",
+    "surface_alt": "#F0F2FA",
+    "border": "#D8DAE2",
+    "success": "#49C88A",
+    "warning": "#F7C652",
+    "danger": "#E55757",
+    "info": "#4C9FFD",
+    "neutral": "#5C6370"
+  },
+
+  "text": {
+    "title": "#1A1A1A",
+    "subtitle": "#454545",
+    "body": "#222222",
+    "muted": "#777777",
+    "inverse": "#FFFFFF"
+  },
+
+  "radius": { "sm": "4px", "md": "8px", "lg": "16px" },
+  "shadow": {
+    "sm": "0 1px 3px rgba(0,0,0,0.07)",
+    "md": "0 3px 12px rgba(0,0,0,0.1)",
+    "lg": "0 8px 24px rgba(0,0,0,0.12)"
+  },
+
+  "spacing": { "sm": "6px", "md": "12px", "lg": "20px" },
+
+  "surface_levels": {
+    "level_1": "#FFFFFF",
+    "level_2": "#F0F2FA",
+    "level_3": "#E6E8F0",
+    "level_4": "#DDE0E8"
+  },
+
+  "semantic": {
+    "button_primary_bg": "#4A77FF",
+    "button_primary_text": "#FFFFFF",
+    "button_secondary_bg": "#F0F2FA",
+    "button_secondary_text": "#1A1A1A",
+    "button_ghost_text": "#1A1A1A",
+    "card_bg": "#FFFFFF",
+    "card_border": "#D8DAE2",
+    "panel_bg": "#FFFFFF",
+    "panel_border": "#D8DAE2"
+  },
+
+  "font": {
+    "heading": "Poppins",
+    "body": "Roboto",
+    "mono": "JetBrains Mono"
+  }
+}

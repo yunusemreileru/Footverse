@@ -1,0 +1,26 @@
+/* ============================================================
+   FOOTER (Theme Engine v3)
+============================================================ */
+
+#footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 40px;
+
+    background: var(--fv-footer-bg);
+    color: var(--fv-footer-text);
+
+    font-size: 12px;
+    font-family: var(--font_body);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 1px solid var(--colors_border);
+
+    z-index: 950;
+}

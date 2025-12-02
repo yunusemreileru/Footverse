@@ -1,0 +1,104 @@
+{% load static %}
+
+<div class="templates-list fv-stack fv-stack--lg">
+
+    <!-- HEADER -->
+    <div class="templates-list-header">
+        <a href="{% url 'art_studio:template_create' %}{% if current_type %}?type={{ current_type.id }}{% endif %}"
+           class="fv-btn fv-btn--primary tpl-add-btn">
+            + Yeni Template
+        </a>
+    </div>
+
+    <!-- FILTER -->
+    <div class="templates-filter-row">
+        <form method="get"
+            action="{% url 'art_studio:template_list' %}"
+            class="tpl-filter-form">
+            <label for="tplFilter" class="tpl-filter-label">Template Type</label>
+            <select name="type"
+                    id="tplFilter"
+                    class="fv-input tpl-filter-select"
+                    onchange="this.form.submit()">
+                <option value="" {% if not current_type %}selected{% endif %}>
+                    Tüm Template'ler
+                </option>
+                {% for tt in template_types %}
+                    <option value="{{ tt.id }}"
+                        {% if current_type and current_type.id == tt.id %}selected{% endif %}>
+                        {{ tt.name }} ({{ tt.code }})
+                    </option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+
+    <!-- ALT BAŞLIK -->
+    <h3 class="fv-heading templates-list-title">
+        {% if current_type %}
+            {{ current_type.name }} tipindeki template’ler
+        {% else %}
+            Tüm Template’ler
+        {% endif %}
+    </h3>
+
+    <!-- LİSTE -->
+    <div class="tpl-card-list fv-stack fv-stack--md">
+        {% for t in templates %}
+        <div class="fv-card fv-card--selectable tpl-card-item
+            {% if selected and selected.id == t.id %} fv-card--active {% endif %}"
+             data-detail-url="{% url 'art_studio:template_detail' t.id %}{% if current_type %}?type={{ current_type.id }}{% endif %}">
+
+            <div class="fv-card__body tpl-card-body">
+
+                <!-- Sol: kod + ad + type -->
+                <div class="tpl-card-main">
+
+                    <div class="tpl-card-topline">
+                        <span class="tpl-type-code">{{ t.template_type.code }}</span>
+                        <span class="tpl-version-badge">v{{ t.version|default:"1" }}</span>
+                    </div>
+
+                    <div class="tpl-card-code">{{ t.code }}</div>
+                    <div class="tpl-card-name">{{ t.name }}</div>
+                </div>
+
+                <!-- Sağ: durum + aksiyon ikonları -->
+                <div class="tpl-card-right">
+
+                    <!-- Aktif/Pasif dot -->
+                    <div class="tpl-card-status">
+                        {% if t.is_active %}
+                            <span class="status-dot status-active" title="Aktif"></span>
+                        {% else %}
+                            <span class="status-dot status-passive" title="Pasif"></span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Aksiyon ikonları -->
+                    <div class="tpl-card-actions">
+                        <a href="{% url 'art_studio:template_edit' t.id %}{% if current_type %}?type={{ current_type.id }}{% endif %}"
+                           class="fv-btn fv-btn--ghost fv-btn--icon"
+                           title="Düzenle"
+                           onclick="event.stopPropagation();">
+                            ✏️
+                        </a>
+
+                        <a href="{% url 'art_studio:template_delete' t.id %}{% if current_type %}?type={{ current_type.id }}{% endif %}"
+                           class="fv-btn fv-btn--ghost fv-btn--icon fv-btn--danger-text"
+                           title="Sil"
+                           onclick="event.stopPropagation();">
+                            🗑️
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        {% empty %}
+            <p class="fv-muted">Henüz template oluşturulmamış.</p>
+        {% endfor %}
+    </div>
+
+</div>

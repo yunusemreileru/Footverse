@@ -1,0 +1,114 @@
+/* ============================================================
+   SIDEBAR (Theme Engine v3)
+   - Navbar & footer arasında kart görünümü
+============================================================ */
+
+#sidebar {
+  position: fixed;
+  /* NAVBAR + üst boşluk */
+  top: calc(56px + var(--spacing_lg));
+  /* FOOTER + alt boşluk */
+  bottom: calc(40px + var(--spacing_lg));
+  left: 0;
+
+  width: 240px;
+  box-sizing: border-box;
+
+  background: var(--fv-sidebar-bg);
+  color: var(--fv-sidebar-text);
+
+  padding: var(--spacing_md) var(--spacing_sm);
+  display: flex;
+  flex-direction: column;
+
+  overflow-y: auto;
+
+  /* 4 köşe yuvarlak */
+  border-radius: var(--radius_lg, 18px);
+  /* sağdaki sert çizgiyi yumuşatalım */
+  border: 1px solid var(--colors_border);
+
+  transition: width 0.25s ease, opacity 0.25s ease;
+
+  z-index: 900;
+  font-family: var(--font_body);
+}
+
+
+/* COLLAPSED MODE */
+body.sidebar-collapsed #sidebar {
+  width: 72px;
+  overflow-y: hidden;
+}
+
+/* Hide labels when collapsed */
+body.sidebar-collapsed #sidebar .sidebar-link-label,
+body.sidebar-collapsed #sidebar .sidebar-header {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* HEADER */
+.sidebar-header {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text_muted);
+  margin-bottom: var(--spacing_sm);
+}
+
+/* NAVIGATION */
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing_sm);
+}
+
+/* LINK */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing_sm);
+
+  padding: 8px 12px;
+  border-radius: var(--radius_sm);
+
+  color: var(--fv-sidebar-text);
+  text-decoration: none;
+  font-size: 14px;
+
+  transition:
+    background var(--fv-anim-normal),
+    color var(--fv-anim-normal),
+    padding-left var(--fv-anim-normal);
+}
+
+.sidebar-link:hover {
+  background: var(--fv-sidebar-hover-bg);
+  color: var(--fv-sidebar-hover-text);
+  padding-left: 18px;
+}
+
+/* ACTIVE STATE */
+.sidebar-link.is-active {
+  background: var(--fv-sidebar-active-bg);
+  color: var(--fv-sidebar-active-text);
+}
+
+/* COLLAPSED ALIGNMENT */
+body.sidebar-collapsed .sidebar-link {
+  justify-content: center;
+}
+body.sidebar-collapsed .sidebar-link:hover {
+  padding-left: 12px;
+}
+
+/* Scrollbar biraz daha ince */
+#sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+#sidebar::-webkit-scrollbar-thumb {
+  background: var(--colors_neutral);
+  border-radius: var(--radius_md);
+}

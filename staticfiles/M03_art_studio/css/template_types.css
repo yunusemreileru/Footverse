@@ -1,0 +1,147 @@
+/* ============================================================
+   FOOTVERSE STUDIO — TEMPLATE TYPES MASTER UI (FINAL)
+============================================================ */
+
+/* === Ana Wrapper === */
+.studio-main-frame .types-wrapper {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 24px;
+    padding: 24px;
+
+    background: var(--color_palette_neutral_light);
+
+    min-height: calc(100vh - 180px);
+}
+
+/* ============================================================
+   SOL PANEL
+============================================================ */
+
+.studio-main-frame .types-list-panel {
+    padding-right: 20px;
+    border-right: 1px solid var(--color_palette_neutral_medium);
+}
+
+.studio-main-frame .type-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ============================================================
+   FOOTVERSE PREMIUM WORKSPACE CARD SYSTEM — FINAL VERSION
+============================================================ */
+
+/* CARD — NORMAL */
+.studio-main-frame .type-card-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 16px;
+
+    /* Always safe tones */
+    background: var(--color_palette_neutral_light);
+    border: 1px solid var(--color_palette_neutral_medium);
+
+    border-radius: var(--borders_radius_medium);
+    cursor: pointer;
+
+    transition: all 0.18s ease;
+}
+
+/* CARD — HOVER (NEVER DARK) */
+.studio-main-frame .type-card-item:hover {
+    background: var(--color_palette_neutral_medium); /* safe tone */
+    border-color: var(--color_palette_neutral_dark);
+}
+
+/* ACTIVE (PREMIUM, SAFE, TEMA UYUMLU) */
+.studio-main-frame .type-card-item.active {
+    background: var(--color_palette_neutral_light) !important;
+    border: 2px solid var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.18) !important;
+}
+
+/* TEXT */
+.studio-main-frame .type-card-main {
+    text-decoration: none !important;
+    color: var(--text_palette_primary);
+}
+.studio-main-frame .type-card-code {
+    font-size: 12px;
+    color: var(--text_palette_muted);
+}
+.studio-main-frame .type-card-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text_palette_title);
+}
+
+/* BUTTONS */
+.studio-main-frame .btn-small {
+    padding: 6px 12px;
+    border-radius: var(--borders_radius_soft);
+    background: var(--primary);
+    color: var(--text_palette_inverse, #fff);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: opacity .15s ease;
+}
+.studio-main-frame .btn-small:hover {
+    opacity: 0.85;
+}
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.studio-main-frame .type-card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.studio-main-frame .btn-small {
+    padding: 6px 12px;
+    background: var(--primary);
+    color: var(--text_palette_inverse, #fff);
+
+    border-radius: var(--borders_radius_soft);
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none !important;
+    transition: opacity 0.2s ease;
+}
+
+.studio-main-frame .btn-small:hover {
+    opacity: 0.85;
+}
+
+.studio-main-frame .btn-small.btn-danger {
+    background: #d9534f;
+}
+
+/* ============================================================
+   SAĞ PANEL
+============================================================ */
+
+.studio-main-frame .types-detail-panel {
+    padding-left: 24px;
+}
+
+.studio-main-frame .detail-box,
+.studio-main-frame .form-box {
+    background: var(--color_palette_neutral_light);
+    border: 1px solid var(--color_palette_neutral_medium);
+    border-radius: var(--borders_radius_medium);
+    padding: 24px;
+}
+
+/* EMPTY STATE */
+.studio-main-frame .empty-state {
+    padding: 40px;
+    color: var(--text_palette_muted);
+}

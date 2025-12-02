@@ -1,0 +1,99 @@
+<div class="fv-panel fv-stack fv-stack--lg">
+
+  <h2 class="fv-heading">
+    {% if mode == "create" %}Yeni Template Oluştur
+    {% elif mode == "edit" %}Template Düzenle
+    {% elif mode == "delete" %}Template Sil
+    {% else %}Template Detayı
+    {% endif %}
+  </h2>
+
+  {% if mode == "delete" %}
+
+    <p>
+      <strong>{{ selected.name }}</strong> template’ini silmek üzeresiniz.
+    </p>
+
+    <form method="POST" class="fv-stack fv-stack--md">
+      {% csrf_token %}
+      <div class="form-actions">
+        <button type="submit" class="fv-btn fv-btn--danger">Evet, Sil</button>
+        <a href="{% url 'art_studio:template_detail' selected.id %}"
+           class="fv-btn fv-btn--secondary">Vazgeç</a>
+      </div>
+    </form>
+
+  {% else %}
+
+    {# ======================= CREATE / EDIT / DETAIL ======================= #}
+    <form method="POST" class="fv-form fv-stack fv-stack--lg template-form">
+      {% csrf_token %}
+
+      <div class="templates-detail-grid">
+
+        {# ============================================================= #}
+        {# SOL KOLON: GENEL ALANLAR + PARAMETRE SEKME BLOĞU              #}
+        {# ============================================================= #}
+        <div class="detail-box fv-stack fv-stack--md">
+
+          {# Genel alanlar (template_type, code, name, açıklama, vs.) #}
+          {% include "M03_art_studio/templates/partials/_general_params.html" %}
+
+          {# Parametre sekmeleri ve içerikleri #}
+          <div class="template-params-section">
+
+            <div class="detail-label">Parametreler</div>
+
+            {# Sekme başlıkları #}
+            {% include "M03_art_studio/templates/partials/_param_tabs.html" %}
+
+            {# Sekme içerikleri #}
+            <div class="tpl-param-panels">
+              {% include "M03_art_studio/templates/partials/_layout_params.html" %}
+              {% include "M03_art_studio/templates/partials/_shape_params.html" %}
+              {% include "M03_art_studio/templates/partials/_icon_params.html" %}
+              {% include "M03_art_studio/templates/partials/_stars_params.html" %}
+              {% include "M03_art_studio/templates/partials/_platform_params.html" %}
+              {% include "M03_art_studio/templates/partials/_effects_params.html" %}
+              {% include "M03_art_studio/templates/partials/_raw_params.html" %}
+            </div>
+
+          </div> {# .template-params-section #}
+
+        </div> {# .detail-box #}
+
+        {# ============================================================= #}
+        {# SAĞ KOLON: PREVIEW PANELİ                                     #}
+        {# ============================================================= #}
+        <div class="template-preview-panel fv-stack fv-stack--md">
+          <div class="detail-label">Preview</div>
+          <div class="template-preview-box fv-panel fv-surface"
+               id="template-live-preview">
+            <div class="empty-state">
+              <p>Parametreleri düzenledikçe canlı önizleme burada görünecek.</p>
+            </div>
+          </div>
+        </div>
+
+      </div> {# .templates-detail-grid #}
+
+      <!-- Actions -->
+      <div class="form-actions">
+        <button type="submit" class="fv-btn fv-btn--primary">Kaydet</button>
+
+        {% if mode == "edit" and selected %}
+          <a href="{% url 'art_studio:template_detail' selected.id %}"
+             class="fv-btn fv-btn--secondary">Vazgeç</a>
+        {% else %}
+          <a href="{% url 'art_studio:template_list' %}{% if current_type %}?type={{ current_type.id }}{% endif %}"
+             class="fv-btn fv-btn--secondary">Vazgeç</a>
+        {% endif %}
+
+        <button type="reset" class="fv-btn fv-btn--ghost">Temizle</button>
+      </div>
+
+    </form>
+
+  {% endif %}
+
+</div>

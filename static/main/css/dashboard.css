@@ -1,0 +1,52 @@
+/* ============================================================
+   DASHBOARD PAGE (Theme Engine v3)
+============================================================ */
+
+.dashboard-container {
+    background: var(--fv-card-bg);
+    color: var(--text_body);
+    padding: var(--spacing_lg);
+
+    border-radius: var(--radius_md);
+    border: 1px solid var(--fv-card-border);
+    box-shadow: var(--fv-card-shadow);
+
+    margin-bottom: var(--spacing_lg);
+}
+
+/* Title */
+.dashboard-container h1,
+.dashboard-container h2 {
+    color: var(--text_title);
+    margin-bottom: var(--spacing_md);
+}
+
+/* Normal text */
+.dashboard-container p {
+    color: var(--text_body);
+    margin-bottom: var(--spacing_sm);
+}
+
+/* Dashboard grid (isteğe bağlı) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing_lg);
+}
+
+/* Dashboard card (UI Engine card override) */
+.dashboard-card {
+    background: var(--fv-card-bg);
+    border: 1px solid var(--fv-card-border);
+    border-radius: var(--radius_md);
+    padding: var(--spacing_md);
+    box-shadow: var(--fv-card-shadow);
+
+    transition: box-shadow var(--fv-anim-normal),
+                transform var(--fv-anim-normal);
+}
+
+.dashboard-card:hover {
+    box-shadow: var(--fv-card-hover-shadow);
+    transform: translateY(-2px);
+}

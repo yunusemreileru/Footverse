@@ -1,0 +1,180 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'M03_art_studio/css/studio_layout.css' %}">
+<link rel="stylesheet" href="{% static 'M03_art_studio/css/studio_menu.css' %}">
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'M03_art_studio/js/studio_menu.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+
+<div class="studio-top-wrapper fv-panel">
+
+    <!-- ÜST BAŞLIK -->
+    <div class="studio-header fv-stack fv-stack--sm">
+        <div class="studio-header-title fv-heading">ART STUDIO <span class="studio-header-sub fv-muted">{Template • Object • Asset Studio}</span> </div>
+        
+    </div>
+
+    <!-- MENÜ BAR -->
+    <div class="studio-menu-bar">
+
+        <!-- ART STUDIO HOME -->
+        <div class="studio-menu-item-wrapper no-submenu">
+            <a href="{% url 'art_studio:studio_home' %}" class="studio-menu-item">
+                <span class="menu-icon">🏠</span>
+                <span class="menu-text">Home</span>
+            </a>
+        </div>
+
+        <!-- TEMPLATE STUDIO -->
+        <div class="studio-menu-item-wrapper">
+            <div class="studio-menu-item">🎨 Template Studio</div>
+
+            <div class="studio-submenu fv-panel">
+
+                <div class="submenu-col fv-stack fv-stack--sm">
+                    <div class="submenu-group-title fv-heading">Template Manager</div>
+
+                    <a href="{% url 'art_studio:template_type_list' %}" class="submenu-item">
+                        <span class="submenu-icon">📘</span>
+                        <span class="submenu-text">Template Types</span>
+                    </a>
+
+                    <a href="{% url 'art_studio:template_list' %}" class="submenu-item">
+                        <span class="submenu-icon">📄</span>
+                        <span class="submenu-text">Templates</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⚡</span>
+                        <span class="submenu-text">Quick Template</span>
+                    </a>
+                </div>
+
+                <div class="submenu-col fv-stack fv-stack--sm">
+                    <div class="submenu-group-title fv-heading">Tools</div>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⬆️</span>
+                        <span class="submenu-text">Import</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⬇️</span>
+                        <span class="submenu-text">Export</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">🧪</span>
+                        <span class="submenu-text">Test Lab</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- GAME OBJECT STUDIO -->
+        <div class="studio-menu-item-wrapper">
+            <div class="studio-menu-item">⚙️ Game Object Studio</div>
+
+            <div class="studio-submenu fv-panel">
+
+                <div class="submenu-col fv-stack fv-stack--sm">
+                    <div class="submenu-group-title fv-heading">Objects</div>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">🧩</span>
+                        <span class="submenu-text">Object Types</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">📦</span>
+                        <span class="submenu-text">Objects</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⚡</span>
+                        <span class="submenu-text">Quick Object</span>
+                    </a>
+                </div>
+
+                <div class="submenu-col fv-stack fv-stack--sm">
+                    <div class="submenu-group-title fv-heading">Tools</div>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⬆️</span>
+                        <span class="submenu-text">Import</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⬇️</span>
+                        <span class="submenu-text">Export</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">🧪</span>
+                        <span class="submenu-text">Test Lab</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASSET STUDIO -->
+        <div class="studio-menu-item-wrapper">
+            <div class="studio-menu-item">📁 Asset Studio</div>
+
+            <div class="studio-submenu fv-panel">
+
+                <div class="submenu-col fv-stack fv-stack--sm">
+                    <div class="submenu-group-title fv-heading">Assets</div>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">🎨</span>
+                        <span class="submenu-text">Icons</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">🖼️</span>
+                        <span class="submenu-text">Frames</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">✨</span>
+                        <span class="submenu-text">FX</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">🎚️</span>
+                        <span class="submenu-text">Filters</span>
+                    </a>
+                </div>
+
+                <div class="submenu-col fv-stack fv-stack--sm">
+                    <div class="submenu-group-title fv-heading">Tools</div>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⬆️</span>
+                        <span class="submenu-text">Import</span>
+                    </a>
+
+                    <a href="#" class="submenu-item">
+                        <span class="submenu-icon">⬇️</span>
+                        <span class="submenu-text">Export</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="studio-main-frame fv-panel">
+    {% block studio_content %}{% endblock %}
+</div>
+
+{% endblock %}

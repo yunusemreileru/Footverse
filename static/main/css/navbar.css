@@ -1,0 +1,81 @@
+/* ============================================================
+   NAVBAR (Theme Engine v3)
+   - Tüm renkler ve boyutlar temadan türetilir
+============================================================ */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 56px;
+
+  background: var(--fv-navbar-bg);
+  color: var(--fv-navbar-text);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 var(--spacing_md);
+  box-sizing: border-box;
+
+  border-bottom: 1px solid var(--colors_border);
+  box-shadow: var(--shadow_sm);
+
+  z-index: 1000;
+  font-family: var(--font_body);
+}
+
+/* ---- LEFT ---- */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing_sm);
+}
+
+/* Toggle Button */
+.navbar-toggle {
+  background: transparent;
+  border: none;
+  color: var(--fv-navbar-text);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.navbar-toggle:hover {
+  background: var(--fv-navbar-hover-bg);
+}
+
+/* Logo */
+.navbar-logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text_title);
+}
+
+/* ---- RIGHT ---- */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing_md);
+  color: var(--text_subtitle);
+  font-size: 14px;
+}
+
+.navbar-user {
+  opacity: 0.9;
+}
+
+.navbar-exit {
+  color: var(--colors_primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.navbar-exit:hover {
+  color: color-mix(in srgb, var(--colors_primary) 85%, white);
+}

@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <title>Footverse v2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {# 1 GOOGLE FONTS #}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+
+    {# 2 AKTİF TEMA → CSS DEĞİŞKENLERİ #}
+    <style>
+    :root {
+        {% for group_key, group in active_theme.items %}
+            {% if group_key != "meta" %}
+                {% for key, value in group.items %}
+                    --{{ group_key }}_{{ key }}: {{ value }};
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    }
+    </style>
+
+    {# 3 GLOBAL / LAYOUT CSS #}
+    <link rel="stylesheet" href="{% static 'main/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/footverse_ui.css' %}">
+
+    {# SAYFA ÖZEL CSS #}
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="layout-with-sidebar">
+
+    {% include "main/navbar.html" %}
+    {% include "main/sidebar.html" %}
+
+    <main id="content-area">
+        <div class="layout-shell">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+
+    {% include "main/footer.html" %}
+
+    <script src="{% static 'main/js/sidebar.js' %}"></script>
+    <script src="{% static 'main/js/navbar.js' %}"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

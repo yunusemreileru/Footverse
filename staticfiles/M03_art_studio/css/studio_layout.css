@@ -1,0 +1,43 @@
+/* ============================================================
+   LAYOUT ÇERÇEVE 
+   Tema uyumlu alanlar: --neutral_light, --neutral_medium, --primary, --title
+============================================================ */
+
+.studio-top-wrapper {
+    background: var(--neutral_light);
+    border: 1px solid var(--neutral_medium);
+    padding: 24px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* BAŞLIK */
+.studio-header-title {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--primary_text, var(--title));
+    margin-bottom: 4px;
+}
+
+.studio-header-sub {
+    font-size: 14px;
+    color: var(--subtitle);
+    opacity: 0.8;
+}
+
+/* ANA FRAME */
+.studio-main-frame {
+    background: var(--neutral_light);
+    border: 1px solid var(--neutral_medium);
+    padding: 28px;
+    border-radius: 8px;
+    min-height: 600px;
+    margin-bottom: 40px;
+}
+
+.studio-top-wrapper,
+.studio-main-frame {
+    background: var(--neutral_light);
+    border: 2px solid var(--neutral_medium);
+    box-shadow: var(--shadow-base);
+}

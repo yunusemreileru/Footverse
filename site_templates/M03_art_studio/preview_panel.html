@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'M03_art_studio/css/preview.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="fv-panel fv-stack fv-stack--lg">
+
+    <h1 class="fv-heading">Preview: {{ item.name }}</h1>
+
+    <!-- PREVIEW BOX -->
+    <div class="preview-box fv-surface fv-panel">
+        {{ svg|safe }}
+    </div>
+
+</div>
+
+{% endblock %}

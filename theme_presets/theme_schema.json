@@ -1,0 +1,76 @@
+{
+  "schema_version": "3.2",
+
+  "meta": {
+    "code": "",
+    "name": "",
+    "author": "Footverse",
+    "version": "1.0"
+  },
+
+  "colors": {
+    "primary": "",
+    "secondary": "",
+    "accent": "",
+    "background": "",
+    "surface": "",
+    "surface_alt": "",
+    "border": "",
+    "success": "",
+    "warning": "",
+    "danger": "",
+    "info": "",
+    "neutral": ""
+  },
+
+  "text": {
+    "title": "",
+    "subtitle": "",
+    "body": "",
+    "muted": "",
+    "inverse": ""
+  },
+
+  "radius": {
+    "sm": "",
+    "md": "",
+    "lg": ""
+  },
+
+  "shadow": {
+    "sm": "",
+    "md": "",
+    "lg": ""
+  },
+
+  "spacing": {
+    "sm": "",
+    "md": "",
+    "lg": ""
+  },
+
+  "surface_levels": {
+    "level_1": "",
+    "level_2": "",
+    "level_3": "",
+    "level_4": ""
+  },
+
+  "semantic": {
+    "button_primary_bg": "",
+    "button_primary_text": "",
+    "button_secondary_bg": "",
+    "button_secondary_text": "",
+    "button_ghost_text": "",
+    "card_bg": "",
+    "card_border": "",
+    "panel_bg": "",
+    "panel_border": ""
+  },
+
+  "font": {
+    "heading": "",
+    "body": "",
+    "mono": ""
+  }
+}

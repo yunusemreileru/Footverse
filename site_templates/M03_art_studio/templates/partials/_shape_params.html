@@ -1,0 +1,97 @@
+{# ====================== 2) ŞEKİL ======================= #}
+<div class="tpl-param-panel" data-tab="shape">
+
+  <div class="param-row">
+    <label class="param-label" for="param-shape-type">
+      Şekil tipi
+    </label>
+    <div class="param-value">
+      <select id="param-shape-type"
+              class="fv-input tpl-param-input"
+              data-param-path="shape.type">
+        <option value="">Seçiniz...</option>
+        <option value="circle">Daire</option>
+        <option value="square">Kare</option>
+        <option value="rounded">Yuvarlatılmış kare</option>
+        <option value="hexagon">Altıgen</option>
+        <option value="polygon">Poligon</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-shape-size">
+      Şekil boyutu
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-shape-size"
+              data-slider-step="-1">−</button>
+      <input id="param-shape-size"
+             type="range"
+             min="32"
+             max="256"
+             step="1"
+             class="tpl-param-input"
+             data-param-path="shape.size">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-shape-size"
+              data-slider-step="1">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-shape-size">0</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-fill-color">
+      Dolgu rengi
+    </label>
+    <div class="param-value">
+      <input id="param-fill-color"
+             type="color"
+             value="#ffffff"
+             class="tpl-param-input"
+             data-param-path="colors.fill">
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-stroke-color">
+      Stroke rengi
+    </label>
+    <div class="param-value">
+      <input id="param-stroke-color"
+             type="color"
+             class="tpl-param-input"
+             data-param-path="colors.stroke">
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-stroke-width">
+      Stroke kalınlığı
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stroke-width"
+              data-slider-step="-1">−</button>
+      <input id="param-stroke-width"
+             type="range"
+             min="0"
+             max="32"
+             step="1"
+             class="tpl-param-input"
+             data-param-path="colors.stroke_width">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stroke-width"
+              data-slider-step="1">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-stroke-width">0</span>
+    </div>
+  </div>
+
+</div>

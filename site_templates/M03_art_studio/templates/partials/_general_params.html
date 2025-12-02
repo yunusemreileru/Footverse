@@ -1,0 +1,66 @@
+{# Genel form alanları + checkboxlar #}
+
+<div class="fv-stack fv-stack--md">
+
+  <!-- Template Type -->
+  <div class="fv-form-group fv-stack fv-stack--sm">
+    <label for="{{ form.template_type.id_for_label }}">Template Type</label>
+    {{ form.template_type }}
+  </div>
+
+  <!-- Code -->
+  <div class="fv-form-group fv-stack fv-stack--sm">
+    <label for="{{ form.code.id_for_label }}">Kod</label>
+    {{ form.code }}
+  </div>
+
+  <!-- Name -->
+  <div class="fv-form-group fv-stack fv-stack--sm">
+    <label for="{{ form.name.id_for_label }}">Ad</label>
+    {{ form.name }}
+  </div>
+
+  <!-- Description -->
+  <div class="fv-form-group fv-stack fv-stack--sm">
+    <label for="{{ form.description.id_for_label }}">Açıklama</label>
+    {{ form.description }}
+  </div>
+
+  <!-- Version -->
+  <div class="fv-form-group fv-stack fv-stack--sm">
+    <label for="{{ form.version.id_for_label }}">Versiyon</label>
+    {{ form.version }}
+  </div>
+
+  <!-- Checkboxlar -->
+  <div class="fv-form-group fv-form-inline">
+    <label class="fv-label">
+      {{ form.is_active }} Aktif
+    </label>
+  </div>
+
+  <div class="fv-form-group fv-form-inline">
+    <label class="fv-label">
+      {{ form.show_icon }} Merkez ikon görünsün
+    </label>
+  </div>
+
+  <div class="fv-form-group fv-form-inline">
+    <label class="fv-label">
+      {{ form.show_stars }} Yıldızlar görünsün
+    </label>
+  </div>
+
+  <div class="fv-form-group fv-form-inline">
+    <label class="fv-label">
+      {{ form.show_platform }} Platform bandı görünsün
+    </label>
+  </div>
+
+  <div class="fv-form-group fv-form-inline">
+    <label class="fv-label">
+      {{ form.show_effects }} Efektler görünsün
+    </label>
+  </div>
+
+</div>

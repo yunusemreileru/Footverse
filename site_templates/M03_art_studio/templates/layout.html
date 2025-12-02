@@ -1,0 +1,48 @@
+{% extends "M03_art_studio/base_studio.html" %}
+{% load static %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'M03_art_studio/css/templates.css' %}">
+{% endblock %}
+
+{% block studio_content %}
+
+<div class="templates-wrapper fv-panel fv-panel--workspace fv-panel-split">
+
+    <!-- SOL PANEL -->
+    <div class="templates-list-panel">
+        {% include "M03_art_studio/templates/_list.html" %}
+    </div>
+
+    <!-- SAĞ PANEL -->
+    <div class="templates-detail-panel">
+        {% if mode == "detail" %}
+            {% include "M03_art_studio/templates/_details.html" %}
+        {% elif mode == "create" or mode == "edit" or mode == "delete" %}
+            {% include "M03_art_studio/templates/_form.html" %}
+        {% else %}
+            <div class="empty-state">
+                <h2>Bir Template seçin</h2>
+                <p>Soldan bir template seçebilir veya yeni bir template oluşturabilirsiniz.</p>
+            </div>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  {{ block.super }}
+  <script src="{% static 'M03_art_studio/js/templates/utils.js' %}"></script>
+  <script src="{% static 'M03_art_studio/js/templates/layout.js' %}"></script>
+  <script src="{% static 'M03_art_studio/js/templates/shape.js' %}"></script>
+  <script src="{% static 'M03_art_studio/js/templates/icon.js' %}"></script>
+  <script src="{% static 'M03_art_studio/js/templates/stars.js' %}"></script>
+  <script src="{% static 'M03_art_studio/js/templates/platform.js' %}"></script>
+  <script src="{% static 'M03_art_studio/js/templates/effects.js' %}"></script>
+  <script src="{% static 'M03_art_studio/js/templates/main.js' %}"></script>
+{% endblock %}
+
+

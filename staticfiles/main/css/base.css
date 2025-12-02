@@ -1,0 +1,88 @@
+/* ========== LAYOUT SABİTLERİ ========== */
+
+:root {
+  --navbar-height: 60px;
+  --footer-height: 32px;
+  --sidebar-width: 220px;
+  --sidebar-collapsed-width: 56px;
+}
+
+/* RESET */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  /* FONT TEMA TABANLI */
+  font-family: var(--font_body_font, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif);
+
+  /* ARKA PLAN ve YAZI RENGİ TEMA TABANLI */
+  background: var(--layout_body_bg, #f2f2f2);
+  color: var(--layout_body_text, #111111);
+}
+
+/* FOOTER */
+#footer.fv-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--footer-height);
+
+  background: var(--layout_footer_bg);
+  color: var(--layout_footer_text);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  z-index: 1000;
+}
+
+/* CONTENT AREA */
+#content-area {
+  position: relative;
+  box-sizing: border-box;
+
+  margin-top: var(--navbar-height);
+  margin-bottom: var(--footer-height);
+
+  margin-left: var(--sidebar-width);
+
+  padding: 20px;
+  padding-bottom: 40px; /* footer tamponu */
+
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: var(--layout_content_bg);
+  color: var(--layout_content_text);
+
+  transition: margin-left 0.25s ease;
+}
+
+/* DESKTOP: COLLAPSED → CONTENT SOLA KAYAR */
+body.sidebar-collapsed #content-area {
+  margin-left: var(--sidebar-collapsed-width);
+}
+
+/* MOBILE DAVRANIŞI (şimdilik sidebar desktop gibi davrandığı için sadece güvenlik amaçlı) */
+@media (max-width: 992px) {
+  #content-area {
+    margin-left: 0 !important;
+  }
+
+  body.sidebar-collapsed #content-area {
+    margin-left: 0 !important;
+  }
+}

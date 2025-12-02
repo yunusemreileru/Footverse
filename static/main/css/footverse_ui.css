@@ -1,0 +1,365 @@
+/*  
+===========================================================
+    FOOTVERSE UI ENGINE v3
+    Tema Sistemi: Theme Engine v3 (29 çekirdek değişken)
+    Bu dosya: Tüm derived UI değişkenlerini otomatik üretir
+===========================================================
+*/
+
+/* --------------------------------------------------------
+   ROOT — Derived Variables Mapping (Auto-Generated)
+-------------------------------------------------------- */
+
+:root {
+
+    /* BUTTONS */
+    --fv-btn-primary-bg: var(--colors_primary);
+    --fv-btn-primary-text: var(--text_inverse);
+    --fv-btn-primary-hover: color-mix(in srgb, var(--colors_primary) 85%, white);
+
+    --fv-btn-secondary-bg: var(--colors_secondary);
+    --fv-btn-secondary-text: var(--text_inverse);
+    --fv-btn-secondary-hover: color-mix(in srgb, var(--colors_secondary) 85%, white);
+
+    --fv-btn-ghost-text: var(--text_body);
+    --fv-btn-ghost-border: var(--colors_border);
+    --fv-btn-ghost-hover-bg: color-mix(in srgb, var(--colors_neutral) 15%, transparent);
+
+    /* CARD */
+    --fv-card-bg: var(--colors_surface);
+    --fv-card-border: var(--colors_border);
+    --fv-card-shadow: var(--shadow_md);
+    --fv-card-hover-shadow: var(--shadow_lg);
+
+    /* PANEL */
+    --fv-panel-bg: var(--colors_surface_alt);
+    --fv-panel-border: var(--colors_border);
+    --fv-panel-shadow: var(--shadow_md);
+
+    /* INPUT */
+    --fv-input-bg: color-mix(in srgb, var(--colors_neutral) 10%, transparent);
+    --fv-input-border: var(--colors_border);
+    --fv-input-text: var(--text_body);
+    --fv-input-placeholder: var(--text_muted);
+    --fv-input-focus-border: var(--colors_primary);
+    --fv-input-focus-shadow: var(--shadow_sm);
+
+    /* NAVBAR */
+    --fv-navbar-bg: var(--colors_surface);
+    --fv-navbar-text: var(--text_title);
+    --fv-navbar-hover-bg: color-mix(in srgb, var(--colors_surface_alt) 85%, transparent);
+
+    /* SIDEBAR */
+    --fv-sidebar-bg: var(--colors_surface);
+    --fv-sidebar-text: var(--text_body);
+    --fv-sidebar-hover-bg: color-mix(in srgb, var(--colors_primary) 15%, transparent);
+    --fv-sidebar-hover-text: var(--text_inverse);
+
+    /* FOOTER */
+    --fv-footer-bg: var(--colors_surface);
+    --fv-footer-text: var(--text_muted);
+
+    /* BADGES */
+    --fv-badge-primary-bg: var(--colors_primary);
+    --fv-badge-primary-text: var(--text_inverse);
+
+    /* ALERTS */
+    --fv-alert-success-bg: color-mix(in srgb, var(--colors_success) 20%, transparent);
+    --fv-alert-success-text: var(--colors_success);
+
+    --fv-alert-warning-bg: color-mix(in srgb, var(--colors_warning) 20%, transparent);
+    --fv-alert-warning-text: var(--colors_warning);
+
+    --fv-alert-danger-bg: color-mix(in srgb, var(--colors_danger) 20%, transparent);
+    --fv-alert-danger-text: var(--colors_danger);
+
+    /* TABLE */
+    --fv-table-header-bg: var(--colors_surface_alt);
+    --fv-table-row-hover: color-mix(in srgb, var(--colors_surface) 90%, transparent);
+
+    /* MODAL */
+    --fv-modal-backdrop: rgba(0,0,0,0.65);
+    --fv-modal-bg: var(--colors_surface);
+    --fv-modal-shadow: var(--shadow_lg);
+
+    /* ANIMATION */
+    --fv-anim-fast: 120ms;
+    --fv-anim-normal: 200ms;
+    --fv-anim-slow: 300ms;
+}
+
+/* --------------------------------------------------------
+   FV PANEL
+-------------------------------------------------------- */
+.fv-panel {
+    background: var(--fv-panel-bg);
+    border: 1px solid var(--fv-panel-border);
+    border-radius: var(--radius_md);
+    box-shadow: var(--fv-panel-shadow);
+    padding: var(--spacing_md);
+    color: var(--text_body);
+}
+
+/* Workspace panel */
+.fv-panel--workspace {
+    padding: var(--spacing_lg);
+}
+
+/* Two-column split */
+.fv-panel-split {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: var(--spacing_lg);
+}
+
+/* --------------------------------------------------------
+   FV CARD
+-------------------------------------------------------- */
+.fv-card {
+    background: var(--fv-card-bg);
+    border: 1px solid var(--fv-card-border);
+    border-radius: var(--radius_sm);
+    box-shadow: var(--fv-card-shadow);
+    padding: var(--spacing_md);
+    transition: box-shadow var(--fv-anim-normal),
+                transform var(--fv-anim-normal);
+}
+
+.fv-card:hover {
+    box-shadow: var(--fv-card-hover-shadow);
+    transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------
+   FV BUTTON
+-------------------------------------------------------- */
+
+.fv-btn {
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: var(--radius_md);
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 14px;
+    font-size: 13px;
+
+    transition: background var(--fv-anim-normal),
+                box-shadow var(--fv-anim-normal),
+                transform var(--fv-anim-fast);
+}
+
+.fv-btn:hover {
+    transform: translateY(-1px);
+}
+
+/* Primary */
+.fv-btn--primary {
+    background: var(--fv-btn-primary-bg);
+    color: var(--fv-btn-primary-text);
+}
+.fv-btn--primary:hover {
+    background: var(--fv-btn-primary-hover);
+}
+
+/* Secondary */
+.fv-btn--secondary {
+    background: var(--fv-btn-secondary-bg);
+    color: var(--fv-btn-secondary-text);
+}
+.fv-btn--secondary:hover {
+    background: var(--fv-btn-secondary-hover);
+}
+
+/* Ghost */
+.fv-btn--ghost {
+    background: transparent;
+    border: 1px solid var(--fv-btn-ghost-border);
+    color: var(--fv-btn-ghost-text);
+}
+.fv-btn--ghost:hover {
+    background: var(--fv-btn-ghost-hover-bg);
+}
+
+/* --------------------------------------------------------
+   FV INPUT
+-------------------------------------------------------- */
+.fv-input {
+    background: var(--fv-input-bg);
+    border: 1px solid var(--fv-input-border);
+    border-radius: var(--radius_sm);
+    color: var(--fv-input-text);
+    padding: 8px 12px;
+}
+
+.fv-input::placeholder {
+    color: var(--fv-input-placeholder);
+}
+
+.fv-input:focus {
+    outline: none;
+    border-color: var(--fv-input-focus-border);
+    box-shadow: var(--fv-input-focus-shadow);
+}
+
+/* --------------------------------------------------------
+   FV BADGE
+-------------------------------------------------------- */
+.fv-badge {
+    display: inline-flex;
+    padding: 4px 10px;
+    border-radius: var(--radius_sm);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.fv-badge--primary {
+    background: var(--fv-badge-primary-bg);
+    color: var(--fv-badge-primary-text);
+}
+
+/* --------------------------------------------------------
+   FV ALERT
+-------------------------------------------------------- */
+.fv-alert {
+    padding: 12px;
+    border-radius: var(--radius_md);
+    font-size: 14px;
+    margin-bottom: var(--spacing_md);
+}
+
+.fv-alert--success {
+    background: var(--fv-alert-success-bg);
+    color: var(--fv-alert-success-text);
+}
+
+.fv-alert--warning {
+    background: var(--fv-alert-warning-bg);
+    color: var(--fv-alert-warning-text);
+}
+
+.fv-alert--danger {
+    background: var(--fv-alert-danger-bg);
+    color: var(--fv-alert-danger-text);
+}
+
+/* --------------------------------------------------------
+   FV TABLE
+-------------------------------------------------------- */
+.fv-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--text_body);
+}
+
+.fv-table thead {
+    background: var(--fv-table-header-bg);
+    color: var(--text_title);
+}
+
+.fv-table th,
+.fv-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--colors_border);
+}
+
+.fv-table tbody tr:hover {
+    background: var(--fv-table-row-hover);
+}
+
+/* --------------------------------------------------------
+   FV MODAL
+-------------------------------------------------------- */
+.fv-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: var(--fv-modal-backdrop);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fv-modal {
+    background: var(--fv-modal-bg);
+    border-radius: var(--radius_md);
+    padding: var(--spacing_lg);
+    box-shadow: var(--fv-modal-shadow);
+}
+
+/* --------------------------------------------------------
+   FV STACK
+-------------------------------------------------------- */
+.fv-stack {
+    display: flex;
+    flex-direction: column;
+}
+.fv-stack--sm { gap: var(--spacing_sm); }
+.fv-stack--md { gap: var(--spacing_md); }
+.fv-stack--lg { gap: var(--spacing_lg); }
+
+/* --------------------------------------------------------
+   FV SURFACE
+-------------------------------------------------------- */
+.fv-surface {
+    background: var(--colors_surface);
+    border-radius: var(--radius_md);
+    padding: var(--spacing_md);
+    border: 1px solid var(--colors_border);
+}
+
+/* ============================================================
+   FV INPUT — SELECT FIX (UI Engine v3)
+============================================================ */
+
+/* SELECT komponenti */
+select.fv-input {
+    background: var(--colors_surface) !important;
+    color: var(--text_body) !important;
+    border: 1px solid var(--colors_border) !important;
+    border-radius: var(--radius_md) !important;
+
+    padding: var(--spacing_sm) var(--spacing_md) !important;
+    font-size: 14px;
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* Dropdown içindeki seçeneklerin görünmesi için */
+select.fv-input option {
+    background: var(--colors_surface) !important;
+    color: var(--text_body) !important;
+}
+
+/* ============================================================
+   FV CHECKBOX FIX — Theme Engine v3
+============================================================ */
+
+.fv-form-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+
+    /* Tema ile uyumlu mavi bir vurgu */
+    accent-color: var(--colors_primary);
+
+    border: 1px solid var(--colors_border);
+    border-radius: var(--radius_sm);
+
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.fv-form-inline {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing_sm);
+}
+
+/* FV button kullanılan <a> etiketleri link alt çizgisini kaldırır */
+a.fv-btn {
+    text-decoration: none !important;
+}

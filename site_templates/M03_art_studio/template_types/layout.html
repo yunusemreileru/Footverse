@@ -1,0 +1,41 @@
+{% extends "M03_art_studio/base_studio.html" %}
+{% load static %}
+
+{% block extra_css %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'M03_art_studio/css/template_types.css' %}">
+{% endblock %}
+
+{% block studio_content %}
+
+<div class="types-wrapper fv-panel fv-panel--workspace fv-panel-split">
+
+    <!-- SOL PANEL -->
+    <div class="types-list-panel fv-stack-vertical fv-stack-gap-normal">
+        {% include "M03_art_studio/template_types/_list.html" %}
+    </div>
+
+    <!-- SAĞ PANEL -->
+    <div class="types-detail-panel">
+        {% if mode == "detail" %}
+            {% include "M03_art_studio/template_types/_details.html" %}
+        {% elif mode == "create" or mode == "edit" %}
+            {% include "M03_art_studio/template_types/_form.html" %}
+        {% elif mode == "delete" %}
+            {% include "M03_art_studio/template_types/_form.html" %} 
+        {% else %}
+            <div class="empty-state">
+                <h2>Bir Template Type seçin</h2>
+                <p>Soldan bir type seçebilir veya yeni bir type oluşturabilirsiniz.</p>
+            </div>
+        {% endif %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    <script src="{% static 'M03_art_studio/js/template_types.js' %}"></script>
+{% endblock %}

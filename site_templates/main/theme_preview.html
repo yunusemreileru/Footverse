@@ -1,0 +1,111 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'main/css/theme_preview.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="fv-panel fv-panel--workspace">
+
+    <h1 class="fv-title">Tema Test / Preview (v3)</h1>
+
+    <!-- THEME SELECTOR -->
+    <form method="post" class="fv-stack fv-stack--md" style="max-width: 320px;">
+        {% csrf_token %}
+        <label class="fv-label">Tema Seç:</label>
+        <select name="theme_code" class="fv-input">
+            {% for preset in presets %}
+            <option value="{{ preset.code }}"
+                {% if active_theme.meta.code|stringformat:"s" == preset.code|stringformat:"s" %}
+                    selected
+                {% endif %}
+            >
+                {{ preset.name }}
+            </option>
+            {% endfor %}
+        </select>
+
+        <button class="fv-btn fv-btn--primary" type="submit">Uygula</button>
+    </form>
+
+    <hr class="fv-divider">
+
+    <!-- COLORS -->
+    <h2 class="fv-section-title">🎨 Renk Paleti</h2>
+
+    <div class="color-grid">
+        {% for key, val in active_theme.colors.items %}
+            <div class="fv-card color-item">
+                <div class="color-swatch" style="background: {{ val }}"></div>
+                <div class="color-label">{{ key }}<br><small>{{ val }}</small></div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <hr class="fv-divider">
+
+    <!-- TYPOGRAPHY -->
+    <h2 class="fv-section-title">✒️ Tipografi</h2>
+
+    <div class="fv-card fv-stack fv-stack--sm">
+        <h1 class="fv-heading">Başlık H1</h1>
+        <h2 class="fv-heading">Başlık H2</h2>
+        <h3 class="fv-heading">Başlık H3</h3>
+        <p>Normal metin örneği</p>
+        <p class="fv-muted">Küçük metin</p>
+        <p><strong>Bold text</strong></p>
+        <p><em>Italic text</em></p>
+        <a href="#" class="fv-link">Tema Linki</a>
+    </div>
+
+    <hr class="fv-divider">
+
+    <!-- BUTTONS -->
+    <h2 class="fv-section-title">🔘 Butonlar</h2>
+
+    <div class="fv-stack fv-stack--sm">
+        <button class="fv-btn fv-btn--primary">Primary</button>
+        <button class="fv-btn fv-btn--secondary">Secondary</button>
+        <button class="fv-btn fv-btn--ghost">Ghost</button>
+    </div>
+
+    <hr class="fv-divider">
+
+    <!-- CARD -->
+    <h2 class="fv-section-title">📦 Kart</h2>
+
+    <div class="fv-card">
+        <h3 class="fv-heading">Kart Başlığı</h3>
+        <p>Bu kart UI Engine v3 tarafından otomatik stillenir.</p>
+    </div>
+
+    <hr class="fv-divider">
+
+    <!-- FORM ELEMENTS -->
+    <h2 class="fv-section-title">📑 Form Elemanları</h2>
+
+    <div class="form-grid-v3">
+        <input class="fv-input" type="text" placeholder="Input örneği">
+        <select class="fv-input">
+            <option>Seçenek 1</option>
+            <option>Seçenek 2</option>
+        </select>
+        <label class="fv-label"><input type="checkbox"> Checkbox</label>
+    </div>
+
+    <hr class="fv-divider">
+
+    <!-- SHADOWS -->
+    <h2 class="fv-section-title">🟦 Gölge Seviyeleri</h2>
+
+    <div class="shadow-grid-v3">
+        <div class="fv-card shadow-test" style="box-shadow: var(--shadow_sm)">sm</div>
+        <div class="fv-card shadow-test" style="box-shadow: var(--shadow_md)">md</div>
+        <div class="fv-card shadow-test" style="box-shadow: var(--shadow_lg)">lg</div>
+    </div>
+
+</div>
+
+{% endblock %}

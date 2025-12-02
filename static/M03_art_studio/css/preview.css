@@ -1,0 +1,6 @@
+.preview-box {
+    margin-top: 20px;
+    padding: 20px;
+    background: var(--neutral_light);
+    border-radius: var(--radius_normal);
+}

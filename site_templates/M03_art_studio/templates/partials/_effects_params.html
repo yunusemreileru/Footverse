@@ -1,0 +1,56 @@
+{# ======================= 6) EFEKT ====================== #}
+<div class="tpl-param-panel" data-tab="effects">
+
+  <div class="param-row">
+    <label class="param-label" for="param-effect-blur">
+      Glow blur
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-effect-blur"
+              data-slider-step="-2">−</button>
+      <input id="param-effect-blur"
+             type="range"
+             min="0"
+             max="64"
+             step="2"
+             class="tpl-param-input"
+             data-param-path="effect.blur">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-effect-blur"
+              data-slider-step="2">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-effect-blur">0</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-effect-type">
+      Glow tipi
+    </label>
+    <div class="param-value">
+      <select id="param-effect-type"
+              class="fv-input tpl-param-input"
+              data-param-path="effect.type">
+        <option value="">Yok</option>
+        <option value="outer">Outer</option>
+        <option value="inner">Inner</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-effect-color">
+      Glow rengi
+    </label>
+    <div class="param-value">
+      <input id="param-effect-color"
+             type="color"
+             class="tpl-param-input"
+             data-param-path="effect.color">
+    </div>
+  </div>
+
+</div>

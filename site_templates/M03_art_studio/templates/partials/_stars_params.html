@@ -1,0 +1,153 @@
+{# ====================== 4) YILDIZ ====================== #}
+<div class="tpl-param-panel" data-tab="stars">
+
+  <div class="param-row">
+    <label class="param-label" for="param-stars-count">
+      Yıldız sayısı
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stars-count"
+              data-slider-step="-1">−</button>
+      <input id="param-stars-count"
+             type="range"
+             min="1"
+             max="12"
+             step="1"
+             value="5"
+             class="tpl-param-input"
+             data-param-path="stars.count">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stars-count"
+              data-slider-step="1">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-stars-count">5</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-stars-size">
+      Yıldız boyutu
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stars-size"
+              data-slider-step="-2">−</button>
+      <input id="param-stars-size"
+             type="range"
+             min="8"
+             max="72"
+             step="2"
+             class="tpl-param-input"
+             data-param-path="stars.size">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stars-size"
+              data-slider-step="2">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-stars-size">0</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-stars-gap">
+      Yıldız aralığı
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stars-gap"
+              data-slider-step="-2">−</button>
+      <input id="param-stars-gap"
+             type="range"
+             min="4"
+             max="72"
+             step="2"
+             class="tpl-param-input"
+             data-param-path="stars.gap">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-stars-gap"
+              data-slider-step="2">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-stars-gap">0</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-stars-color">
+      Yıldız rengi
+    </label>
+    <div class="param-value">
+      <input id="param-stars-color"
+             type="color"
+             class="tpl-param-input"
+             data-param-path="stars.color">
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-stars-border-color">
+      Yıldız border rengi
+    </label>
+    <div class="param-value">
+      <input id="param-stars-border-color"
+             type="color"
+             class="tpl-param-input"
+             data-param-path="stars.border_color">
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label">
+      Yıldız konumu (X / Y)
+    </label>
+    <div class="param-value param-value--slider-pair">
+      <div class="slider-pair-item">
+        <span class="slider-label">X</span>
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-stars-offset-x"
+                data-slider-step="-2">−</button>
+        <input id="param-stars-offset-x"
+               type="range"
+               min="-160"
+               max="160"
+               step="2"
+               class="tpl-param-input"
+               data-param-path="stars.offset_x">
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-stars-offset-x"
+                data-slider-step="2">+</button>
+        <span class="slider-value"
+              data-slider-value-for="param-stars-offset-x">0</span>
+      </div>
+
+      <div class="slider-pair-item">
+        <span class="slider-label">Y</span>
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-stars-offset-y"
+                data-slider-step="-2">−</button>
+        <input id="param-stars-offset-y"
+               type="range"
+               min="-160"
+               max="160"
+               step="2"
+               class="tpl-param-input"
+               data-param-path="stars.offset_y">
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-stars-offset-y"
+                data-slider-step="2">+</button>
+        <span class="slider-value"
+              data-slider-value-for="param-stars-offset-y">0</span>
+      </div>
+    </div>
+  </div>
+
+</div>

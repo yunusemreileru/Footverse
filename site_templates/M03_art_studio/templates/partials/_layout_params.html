@@ -1,0 +1,140 @@
+{# ====================== 1) LAYOUT ====================== #}
+<div class="tpl-param-panel" data-tab="layout">
+
+  <div class="param-row">
+    <label class="param-label" for="param-layout-show-box">
+      Layout önizlemede görünsün
+    </label>
+    <div class="param-value">
+      <input id="param-layout-show-box"
+             type="checkbox"
+             class="tpl-param-input"
+             data-param-path="layout.show_box">
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-layout-width">
+      Layout genişlik (W)
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-layout-width"
+              data-slider-step="-10">−</button>
+      <input id="param-layout-width"
+             type="range"
+             min="200"
+             max="640"
+             step="10"
+             class="tpl-param-input"
+             data-param-path="layout.width">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-layout-width"
+              data-slider-step="10">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-layout-width">0</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-layout-height">
+      Layout yükseklik (H)
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-layout-height"
+              data-slider-step="-10">−</button>
+      <input id="param-layout-height"
+             type="range"
+             min="200"
+             max="640"
+             step="10"
+             class="tpl-param-input"
+             data-param-path="layout.height">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-layout-height"
+              data-slider-step="10">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-layout-height">0</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label">
+      Layout konumu (X / Y)
+    </label>
+    <div class="param-value param-value--slider-pair">
+      <div class="slider-pair-item">
+        <span class="slider-label">X</span>
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-layout-offset-x"
+                data-slider-step="-10">−</button>
+        <input id="param-layout-offset-x"
+               type="range"
+               min="-200"
+               max="200"
+               step="2"
+               class="tpl-param-input"
+               data-param-path="layout.offset_x">
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-layout-offset-x"
+                data-slider-step="10">+</button>
+        <span class="slider-value"
+              data-slider-value-for="param-layout-offset-x">0</span>
+      </div>
+
+      <div class="slider-pair-item">
+        <span class="slider-label">Y</span>
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-layout-offset-y"
+                data-slider-step="-10">−</button>
+        <input id="param-layout-offset-y"
+               type="range"
+               min="-200"
+               max="200"
+               step="2"
+               class="tpl-param-input"
+               data-param-path="layout.offset_y">
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-layout-offset-y"
+                data-slider-step="10">+</button>
+        <span class="slider-value"
+              data-slider-value-for="param-layout-offset-y">0</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-layout-padding">
+      Layout padding
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-layout-padding"
+              data-slider-step="-2">−</button>
+      <input id="param-layout-padding"
+             type="range"
+             min="0"
+             max="80"
+             step="2"
+             class="tpl-param-input"
+             data-param-path="layout.padding">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-layout-padding"
+              data-slider-step="2">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-layout-padding">0</span>
+    </div>
+  </div>
+
+</div>

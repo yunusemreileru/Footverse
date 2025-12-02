@@ -1,0 +1,75 @@
+{
+  "schema_version": "3.2",
+  "meta": {
+    "code": "crimson_glory",
+    "name": "Crimson Glory",
+    "author": "Footverse",
+    "version": "1.0"
+  },
+
+  "colors": {
+    "primary": "#B10028",
+    "secondary": "#FFD35A",
+    "accent": "#FF6B6B",
+    "background": "#1A0F12",
+    "surface": "#2A161A",
+    "surface_alt": "#3A1D25",
+    "border": "#4A2A33",
+    "success": "#37D67A",
+    "warning": "#FFC837",
+    "danger": "#FF3B30",
+    "info": "#4DA3FF",
+    "neutral": "#C9C9C9"
+  },
+
+  "text": {
+    "title": "#FFFFFF",
+    "subtitle": "#FFD3D9",
+    "body": "#F2F2F2",
+    "muted": "#CAAEB4",
+    "inverse": "#000000"
+  },
+
+  "radius": {
+    "sm": "4px",
+    "md": "8px",
+    "lg": "14px"
+  },
+
+  "shadow": {
+    "sm": "0 1px 2px rgba(0,0,0,0.25)",
+    "md": "0 3px 8px rgba(0,0,0,0.35)",
+    "lg": "0 8px 20px rgba(0,0,0,0.45)"
+  },
+
+  "spacing": {
+    "sm": "6px",
+    "md": "12px",
+    "lg": "20px"
+  },
+
+  "surface_levels": {
+    "level_1": "#2A161A",
+    "level_2": "#3A1D25",
+    "level_3": "#4A2631",
+    "level_4": "#5A2E3D"
+  },
+
+  "semantic": {
+    "button_primary_bg": "#B10028",
+    "button_primary_text": "#FFFFFF",
+    "button_secondary_bg": "#3A1D25",
+    "button_secondary_text": "#FFD3D9",
+    "button_ghost_text": "#FFD3D9",
+    "card_bg": "#2A161A",
+    "card_border": "#4A2A33",
+    "panel_bg": "#2A161A",
+    "panel_border": "#4A2A33"
+  },
+
+  "font": {
+    "heading": "Poppins",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  }
+}

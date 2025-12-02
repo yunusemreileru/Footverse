@@ -1,0 +1,142 @@
+.preview-wrapper {
+    padding: 20px;
+    color: var(--layout_content_text);
+}
+
+.preview-title {
+    margin-bottom: 20px;
+    color: var(--text_palette_title);
+}
+
+.theme-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+/* Colors */
+.color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.color-box {
+    text-align: center;
+    width: 80px;
+    color: var(--text_palette_muted);
+}
+
+.color-swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--borders_radius_medium);
+    border: 2px solid var(--color_palette_neutral_dark);
+}
+
+/* Typography */
+.typo-test .small {
+    font-size: 12px;
+}
+
+/* Buttons */
+.button-row {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: var(--color_palette_primary);
+    border-radius: var(--borders_radius_medium);
+    padding: 8px 12px;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background: var(--color_palette_secondary);
+    border-radius: var(--borders_radius_medium);
+    padding: 8px 12px;
+    color: white;
+    border: none;
+}
+
+.btn-accent {
+    background: var(--color_palette_accent_a);
+    border-radius: var(--borders_radius_medium);
+    padding: 8px 12px;
+    color: white;
+    border: none;
+}
+
+.btn-outline {
+    border: 2px solid var(--color_palette_primary);
+    background: transparent;
+    padding: 8px 12px;
+    border-radius: var(--borders_radius_medium);
+}
+
+/* Card */
+.card {
+    width: 300px;
+    background: var(--layout_card_bg);
+    box-shadow: var(--effects_shadow_base);
+    border-radius: var(--borders_radius_medium);
+}
+
+.card-header {
+    background: var(--color_palette_primary);
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    border-radius: var(--borders_radius_medium) var(--borders_radius_medium) 0 0;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+/* Form */
+.form-grid {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Shadows */
+.shadow-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.shadow-box {
+    width: 80px;
+    height: 60px;
+    border-radius: var(--borders_radius_medium);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shadow-sm  { box-shadow: var(--effects_shadow_light); }
+.shadow-base { box-shadow: var(--effects_shadow_medium); }
+.shadow-lg { box-shadow: var(--effects_shadow_strong); }
+.shadow-xl { box-shadow: var(--effects_neon_glow); }
+
+.theme-select {
+    padding: 6px 10px;
+    border: 1px solid var(--color_palette_neutral_medium);
+    background: white;
+    color: black;
+    border-radius: var(--borders_radius_medium);
+}
+
+/* ============================================================
+   SELECT DROPDOWN FIX — option styling
+============================================================ */
+
+.theme-select option {
+    background: white !important;
+    color: black !important;
+}

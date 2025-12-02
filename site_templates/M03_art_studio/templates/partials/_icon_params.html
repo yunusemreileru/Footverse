@@ -1,0 +1,98 @@
+{% load static %}
+{# ======================= 3) İKON ======================= #}
+<div class="tpl-param-panel" data-tab="icon">
+
+  <div class="param-row">
+    <label class="param-label" for="param-icon-src">
+      İkon dosyası
+    </label>
+    <div class="param-value">
+        <select id="param-icon-src"
+                class="fv-input tpl-param-input"
+                data-param-path="icon.src"
+                data-icon-base="{% static 'img/trophies/' %}">
+            <option value="">İkon seçin...</option>
+            {% if icon_files %}
+            {% for f in icon_files %}
+                <option value="{{ f }}">{{ f }}</option>
+            {% endfor %}
+            {% endif %}
+      </select>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label" for="param-icon-size">
+      İkon boyutu
+    </label>
+    <div class="param-value param-value--slider">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-icon-size"
+              data-slider-step="-4">−</button>
+      <input id="param-icon-size"
+             type="range"
+             min="16"
+             max="256"
+             step="4"
+             class="tpl-param-input"
+             data-param-path="icon.size">
+      <button type="button"
+              class="tpl-slider-btn"
+              data-slider-target="param-icon-size"
+              data-slider-step="4">+</button>
+      <span class="slider-value"
+            data-slider-value-for="param-icon-size">0</span>
+    </div>
+  </div>
+
+  <div class="param-row">
+    <label class="param-label">
+      İkon X / Y ofset
+    </label>
+    <div class="param-value param-value--slider-pair">
+      <div class="slider-pair-item">
+        <span class="slider-label">X</span>
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-icon-offset-x"
+                data-slider-step="-2">−</button>
+        <input id="param-icon-offset-x"
+               type="range"
+               min="-120"
+               max="120"
+               step="2"
+               class="tpl-param-input"
+               data-param-path="icon.offset_x">
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-icon-offset-x"
+                data-slider-step="2">+</button>
+        <span class="slider-value"
+              data-slider-value-for="param-icon-offset-x">0</span>
+      </div>
+
+      <div class="slider-pair-item">
+        <span class="slider-label">Y</span>
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-icon-offset-y"
+                data-slider-step="-2">−</button>
+        <input id="param-icon-offset-y"
+               type="range"
+               min="-120"
+               max="120"
+               step="2"
+               class="tpl-param-input"
+               data-param-path="icon.offset_y">
+        <button type="button"
+                class="tpl-slider-btn"
+                data-slider-target="param-icon-offset-y"
+                data-slider-step="2">+</button>
+        <span class="slider-value"
+              data-slider-value-for="param-icon-offset-y">0</span>
+      </div>
+    </div>
+  </div>
+
+</div>

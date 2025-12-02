@@ -1,0 +1,71 @@
+{% load static %}
+
+<div class="types-list-panel fv-stack fv-stack--lg">
+
+    <!-- HEADER -->
+    <div class="type-list-header">
+        <a href="{% url 'art_studio:template_type_create' %}"
+           class="fv-btn fv-btn--primary type-add-btn">
+            + Yeni Şablon Tipi Ekle
+        </a>
+    </div>
+
+    <!-- SUBTITLE -->
+    <h3 class="fv-heading type-list-title">Kayıtlı Şablon Tipleri</h3>
+
+    <!-- LIST -->
+    <div class="type-card-list fv-stack fv-stack--md">
+
+        {% for t in types %}
+        <div class="fv-card fv-card--selectable type-card-item
+            {% if selected and selected.id == t.id %} fv-card--active {% endif %}"
+            data-detail-url="{% url 'art_studio:template_type_detail' t.id %}">
+
+            <div class="fv-card__body type-card-body">
+
+                <!-- Sol alan: code + name -->
+                <div class="type-card-main">
+                    <div class="type-card-code">{{ t.code }}</div>
+                    <div class="type-card-name">{{ t.name }}</div>
+                </div>
+
+                <!-- Sağ alan: statü + butonlar -->
+                <div class="type-card-right">
+
+                    <!-- Aktif/Pasif Durumu -->
+                    <div class="type-card-status">
+                        {% if t.is_active %}
+                            <span class="status-dot status-active" title="Aktif"></span>
+                        {% else %}
+                            <span class="status-dot status-passive" title="Pasif"></span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Edit/Delete ikonları -->
+                    <div class="type-card-actions">
+                        <a href="{% url 'art_studio:template_type_edit' t.id %}"
+                           class="fv-btn fv-btn--ghost fv-btn--icon"
+                           title="Düzenle"
+                           onclick="event.stopPropagation();">
+                            ✏️
+                        </a>
+
+                        <a href="{% url 'art_studio:template_type_delete' t.id %}"
+                           class="fv-btn fv-btn--ghost fv-btn--icon fv-btn--danger-text"
+                           title="Sil"
+                           onclick="event.stopPropagation();">
+                            🗑️
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        {% empty %}
+            <p class="fv-muted">Henüz kayıt yok.</p>
+        {% endfor %}
+
+    </div>
+
+</div>

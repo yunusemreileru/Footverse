@@ -1,0 +1,59 @@
+/* ============================================================
+   ART STUDIO — LAYOUT (Theme Engine v3)
+   Tüm alanlar UI Engine v3 + Theme Engine v3 ile uyumlu
+============================================================ */
+
+/* ÜST KUTU (BAŞLIK + MENÜ) */
+.studio-top-wrapper {
+    background: var(--colors_surface);
+    border: 1px solid var(--colors_border);
+    border-radius: var(--radius_md);
+    box-shadow: var(--shadow_md);
+
+    padding: var(--spacing_lg);
+    margin-bottom: var(--spacing_lg);
+
+    position: relative;
+    z-index: 50;   /* Üst menü her zaman önde */
+}
+
+/* BAŞLIK */
+.studio-header-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text_title);
+}
+
+.studio-header-sub {
+    font-size: 14px;
+    color: var(--text_muted);
+    margin-top: var(--spacing_sm);
+}
+
+/* ANA FRAME (STÜDYO SAYFASININ ÇALIŞMA ALANI) */
+.studio-main-frame {
+    background: var(--colors_surface_alt);
+    border: 1px solid var(--colors_border);
+    border-radius: var(--radius_md);
+    box-shadow: var(--shadow_md);
+
+    padding: var(--spacing_lg);
+    min-height: 600px;
+
+    margin-bottom: var(--spacing_lg);
+
+    position: relative;
+    z-index: 5;   /* Menü altı, ama layout üstü */
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .studio-top-wrapper,
+    .studio-main-frame {
+        padding: var(--spacing_md);
+    }
+
+    .studio-header-title {
+        font-size: 24px;
+    }
+}

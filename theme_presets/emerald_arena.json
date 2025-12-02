@@ -1,0 +1,66 @@
+{
+  "schema_version": "3.2",
+  "meta": {
+    "code": "emerald_arena",
+    "name": "Emerald Arena",
+    "author": "Footverse",
+    "version": "1.0"
+  },
+
+  "colors": {
+    "primary": "#00A86B",
+    "secondary": "#7ED957",
+    "accent": "#18FFC3",
+    "background": "#07100B",
+    "surface": "#0F1A13",
+    "surface_alt": "#15241C",
+    "border": "#1C3227",
+    "success": "#00C97B",
+    "warning": "#FFE15D",
+    "danger": "#D63636",
+    "info": "#2DB3FF",
+    "neutral": "#C8D4C5"
+  },
+
+  "text": {
+    "title": "#FFFFFF",
+    "subtitle": "#C8EEDB",
+    "body": "#E4F5ED",
+    "muted": "#ACC9BB",
+    "inverse": "#000"
+  },
+
+  "radius": { "sm": "4px", "md": "8px", "lg": "16px" },
+  "shadow": {
+    "sm": "0 1px 1px rgba(0,40,20,0.35)",
+    "md": "0 4px 10px rgba(0,40,20,0.4)",
+    "lg": "0 12px 30px rgba(0,40,20,0.55)"
+  },
+
+  "spacing": { "sm": "6px", "md": "12px", "lg": "20px" },
+
+  "surface_levels": {
+    "level_1": "#0F1A13",
+    "level_2": "#15241C",
+    "level_3": "#1C3227",
+    "level_4": "#234033"
+  },
+
+  "semantic": {
+    "button_primary_bg": "#00A86B",
+    "button_primary_text": "#FFFFFF",
+    "button_secondary_bg": "#15241C",
+    "button_secondary_text": "#C8EEDB",
+    "button_ghost_text": "#C8EEDB",
+    "card_bg": "#0F1A13",
+    "card_border": "#1C3227",
+    "panel_bg": "#0F1A13",
+    "panel_border": "#1C3227"
+  },
+
+  "font": {
+    "heading": "Poppins",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
+  }
+}

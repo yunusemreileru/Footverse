@@ -1,0 +1,492 @@
+/* =========================================================
+   M03_art_studio – TEMPLATE STUDIO CSS
+   (liste + detay layout)
+   ====================================================== */
+
+.templates-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.templates-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+/* Sol panel: liste */
+.templates-list-panel {
+  border-radius: 16px;
+  background: var(--fv-surface, rgba(0, 0, 0, 0.35));
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.06));
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.templates-list-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.templates-list-panel-header h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.templates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Template kartları (sol liste) */
+.tpl-card-item {
+  position: relative;
+  border-radius: 12px;
+  padding: 0.6rem 0.7rem;
+  background: var(--fv-surface-subtle, rgba(255, 255, 255, 0.01));
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.08));
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    box-shadow 0.15s ease, transform 0.12s ease;
+}
+
+.tpl-card-item:hover {
+  border-color: var(--fv-accent-soft, rgba(140, 122, 255, 0.7));
+  background: radial-gradient(
+      circle at 10% 0%,
+      rgba(255, 255, 255, 0.04),
+      transparent 55%
+    ),
+    var(--fv-surface-subtle, rgba(255, 255, 255, 0.01));
+  transform: translateY(-1px);
+}
+
+.tpl-card-item.is-active {
+  border-color: var(--fv-accent, #b45eff);
+  box-shadow: 0 0 0 1px rgba(180, 94, 255, 0.35);
+}
+
+.tpl-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.tpl-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.tpl-card-code {
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.tpl-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.tpl-card-meta .badge {
+  padding: 0 0.45rem;
+  border-radius: 999px;
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.18));
+  font-size: 0.7rem;
+}
+
+.tpl-card-meta .pill {
+  opacity: 0.8;
+}
+
+/* Kart aksiyonları (edit / delete ikonları) */
+.tpl-card-actions {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.45rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.tpl-card-action {
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: rgba(0, 0, 0, 0.35);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.75;
+  transition: background 0.12s ease, opacity 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.tpl-card-action:hover {
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Sağ panel: detay / form */
+.templates-detail-panel {
+  border-radius: 16px;
+  background: var(--fv-surface, rgba(0, 0, 0, 0.35));
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.06));
+  padding: 1.1rem 1.2rem 1.3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.templates-detail-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.templates-detail-header h2 {
+  font-size: 1.1rem;
+}
+
+.templates-detail-sub {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* Detay gövde (read-only görünüm) */
+.templates-detail-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.templates-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.meta-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.meta-label {
+  width: 7rem;
+  opacity: 0.7;
+  font-size: 0.82rem;
+}
+
+.meta-value {
+  flex: 1;
+}
+
+/* Preview kutusu (detay sayfası için) */
+.templates-preview-box {
+  border-radius: 16px;
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.09));
+  background: radial-gradient(
+      circle at 20% 0%,
+      rgba(255, 255, 255, 0.06),
+      transparent 55%
+    ),
+    var(--fv-surface-strong, rgba(0, 0, 0, 0.35));
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.templates-preview-box svg {
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
+  max-height: 260px;
+  display: block;
+}
+
+/* Boş state */
+.templates-empty {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Form action butonları */
+.form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+}
+
+/* Küçük yardımcı label */
+.detail-label {
+  font-size: 0.82rem;
+  opacity: 0.65;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* =========================================================
+   TEMPLATE DESIGN – PARAM TABS & PREVIEW LAYOUT v2
+   ====================================================== */
+
+.template-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Ana iki kolon: sol form, sağ preview */
+.templates-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(260px, 2fr);
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Parametre sekme bölümü */
+.template-params-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.06));
+}
+
+.template-params-section .detail-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  opacity: 0.8;
+}
+
+/* Sekme başlıkları */
+.tpl-param-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+  border-radius: 999px;
+  padding: 0.15rem;
+  background: var(--fv-surface-subtle, rgba(255, 255, 255, 0.03));
+}
+
+.tpl-param-tab {
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 0.85rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  opacity: 0.7;
+  white-space: nowrap;
+  transition: background 0.12s ease, opacity 0.12s ease, color 0.12s ease;
+}
+
+.tpl-param-tab.is-active {
+  background: var(--fv-accent-muted, rgba(140, 122, 255, 0.18));
+  color: var(--fv-accent-strong, #fff);
+  opacity: 1;
+}
+
+/* Sekme içerikleri */
+.tpl-param-panels {
+  border-radius: 0.75rem;
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.06));
+  background: var(--fv-surface, rgba(0, 0, 0, 0.18));
+  padding: 1rem 1.25rem;
+}
+
+.tpl-param-panel {
+  display: none;
+}
+
+.tpl-param-panel.is-active {
+  display: block;
+}
+
+.param-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 4fr);
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.35rem 0;
+}
+
+.param-label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.param-value {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Slider satırları */
+.param-value--slider {
+  align-items: center;
+}
+
+.param-value--slider .fv-input[type="range"],
+.param-value--slider input[type="range"] {
+  flex: 1;
+}
+
+.slider-value {
+  min-width: 2.2rem;
+  text-align: right;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Slider için +- butonları */
+.tpl-slider-btn {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.12));
+  background: var(--fv-surface-strong, rgba(255, 255, 255, 0.04));
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
+
+.tpl-slider-btn:hover {
+  border-color: var(--fv-accent-soft, rgba(140, 122, 255, 0.7));
+}
+
+/* Çift slider (X / Y, H / W) */
+.param-value--slider-pair {
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.slider-pair-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.slider-label {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  min-width: 0.9rem;
+}
+
+/* Color picker küçük kutu */
+.fv-input[type="color"],
+input[type="color"].tpl-param-input {
+  width: 2.25rem;
+  height: 1.5rem;
+  padding: 0;
+  border-radius: 0.4rem;
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.35));
+  background: transparent;
+}
+
+/* Sağ kolon: preview paneli */
+.template-preview-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.template-preview-panel .detail-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.template-preview-box {
+  border-radius: 1rem;
+  border: 1px solid var(--fv-border-subtle, rgba(255, 255, 255, 0.08));
+  background: radial-gradient(
+      circle at 20% 0%,
+      rgba(255, 255, 255, 0.06),
+      transparent 55%
+    ),
+    var(--fv-surface-strong, rgba(0, 0, 0, 0.3));
+  min-height: 260px;
+  max-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.template-preview-box svg {
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
+  max-height: 260px;
+  display: block;
+}
+
+.template-preview-box .empty-state {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Ham JSON alanı */
+.tpl-param-panel[data-tab="raw"] textarea {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  font-size: 0.8rem;
+  min-height: 220px;
+}
+
+/* Mor slider rengi: tema üzerinden override edilebilir */
+.template-form input[type="range"] {
+  accent-color: var(--fv-accent, #b45eff);
+}
+
+/* === TEMPLATE DESIGN PREVIEW ALANI ===================== */
+
+.templates-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--fv-gap-xl, 24px);
+  align-items: flex-start;
+}
+
+.template-preview-panel {
+  align-self: flex-start;
+  position: sticky;
+  top: 96px;              /* navbar + başlık altına yapışsın */
+}
+
+/* BURAYI BÜYÜTTÜK */
+.template-preview-box {
+  min-height: 340px;      /* önce 260’tı, daha uzun */
+  max-height: 420px;      /* çok aşırı büyümesin */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

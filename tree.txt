@@ -1,0 +1,182 @@
+Proje Dosya Yapısı:
+
+├── .env
+├── M01_core
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── M02_settings
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   └── theme.py
+│   ├── urls.py
+│   ├── utils
+│   │   ├── __init__.py
+│   │   ├── context_processors.py
+│   │   ├── theme_loader.py
+│   │   └── theme_registry.py
+│   └── views
+│       └── test_theme.py
+├── M03_art_studio
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── factories
+│   │   ├── __init__.py
+│   │   ├── object_factory.py
+│   │   └── template_factory.py
+│   ├── forms
+│   │   ├── __init__.py
+│   │   ├── template_form.py
+│   │   └── template_type_form.py
+│   ├── models
+│   │   ├── __init__.py
+│   │   ├── object.py
+│   │   ├── object_type.py
+│   │   ├── params.py
+│   │   ├── template_model.py
+│   │   └── template_type_model.py
+│   ├── services
+│   │   ├── __init__.py
+│   │   ├── registry.py
+│   │   ├── renderer.py
+│   │   └── validators.py
+│   ├── urls.py
+│   ├── utils
+│   │   ├── __init__.py
+│   │   ├── color_utils.py
+│   │   ├── svg_shapes.py
+│   │   └── template_logic.py
+│   └── views
+│       ├── __init__.py
+│       ├── api.py
+│       ├── preview.py
+│       ├── studio.py
+│       ├── template_type_views.py
+│       └── template_views.py
+├── config
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   ├── views.py
+│   └── wsgi.py
+├── make_art_studio.py
+├── manage.py
+├── requirements.txt
+├── site_templates
+│   ├── M03_art_studio
+│   │   ├── base_studio.html
+│   │   ├── preview_panel.html
+│   │   ├── template_studio.html
+│   │   ├── template_types
+│   │   │   ├── _details.html
+│   │   │   ├── _form.html
+│   │   │   ├── _list.html
+│   │   │   └── layout.html
+│   │   └── templates
+│   │       ├── _details.html
+│   │       ├── _form.html
+│   │       ├── _list.html
+│   │       ├── layout.html
+│   │       └── partials
+│   │           ├── _effects_params.html
+│   │           ├── _general_params.html
+│   │           ├── _icon_params.html
+│   │           ├── _layout_params.html
+│   │           ├── _param_tabs.html
+│   │           ├── _platform_params.html
+│   │           ├── _raw_params.html
+│   │           ├── _shape_params.html
+│   │           └── _stars_params.html
+│   ├── components
+│   └── main
+│       ├── base.html
+│       ├── dashboard.html
+│       ├── footer.html
+│       ├── navbar.html
+│       ├── sidebar.html
+│       └── theme_preview.html
+├── static
+│   ├── M03_art_studio
+│   │   ├── css
+│   │   │   ├── preview.css
+│   │   │   ├── studio_layout.css
+│   │   │   ├── studio_menu.css
+│   │   │   ├── template_types.css
+│   │   │   └── templates.css
+│   │   ├── img
+│   │   │   ├── icons
+│   │   │   │   ├── cup_bronze.png
+│   │   │   │   ├── cup_gold.png
+│   │   │   │   ├── cup_silver.png
+│   │   │   │   ├── medal_bronze.png
+│   │   │   │   ├── medal_gold.png
+│   │   │   │   ├── medal_silver.png
+│   │   │   │   ├── shield_bronze.png
+│   │   │   │   ├── shield_gold.png
+│   │   │   │   ├── shield_silver.png
+│   │   │   │   ├── star.png
+│   │   │   │   ├── star_filled.png
+│   │   │   │   ├── star_outline.png
+│   │   │   │   └── trophy_gold.png
+│   │   │   └── shapes
+│   │   └── js
+│   │       ├── studio_menu.js
+│   │       ├── template_types.js
+│   │       └── templates
+│   │           ├── effects.js
+│   │           ├── icon.js
+│   │           ├── layout.js
+│   │           ├── main.js
+│   │           ├── platform.js
+│   │           ├── shape.js
+│   │           ├── stars.js
+│   │           └── utils.js
+│   └── main
+│       ├── css
+│       │   ├── base.css
+│       │   ├── dashboard.css
+│       │   ├── footer.css
+│       │   ├── footverse_ui.css
+│       │   ├── head.css
+│       │   ├── navbar.css
+│       │   ├── sidebar.css
+│       │   └── theme_preview.css
+│       └── js
+│           ├── base.js
+│           ├── dashboard.js
+│           ├── footer.js
+│           ├── head.js
+│           ├── navbar.js
+│           └── sidebar.js
+├── theme_presets
+│   ├── crimson_glory.json
+│   ├── elite_titanium.json
+│   ├── emerald_arena.json
+│   ├── footverse_legacy.json
+│   ├── galaxy_neon.json
+│   ├── imperial_gold.json
+│   ├── nightfall.json
+│   ├── pure_light.json
+│   ├── royal_sapphire.json
+│   ├── steel_minimal.json
+│   └── theme_schema.json
+├── theme_presets_eski
+│   ├── crimson_glory.json
+│   ├── elite_titanium.json
+│   ├── emerald_arena.json
+│   ├── footverse_legacy.json
+│   ├── galaxy_neon.json
+│   ├── imperial_gold.json
+│   ├── nightfall.json
+│   ├── pure_light.json
+│   ├── royal_sapphire.json
+│   ├── steel_minimal.json
+│   └── theme_schema.json
