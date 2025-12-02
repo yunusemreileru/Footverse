@@ -1,0 +1,99 @@
+# =========================
+# 🐍 Python / Django
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Byte-compiled / optimized / DLL files
+*.pyo
+*.pyd
+*.pdb
+
+# C extensions
+*.so
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Eğer başka lokal DB dosyaları kullanırsan:
+*.sqlite3
+
+# Media / uploads (prod'da genelde tutulmaz)
+media/
+tmp/
+temp/
+
+# =========================
+# 🌍 Ortam Dosyaları
+# =========================
+.env
+.env.*
+*.env
+*.env.*
+
+# =========================
+# 📦 Virtualenv
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# Pipenv
+Pipfile.lock
+
+# Poetry
+.poetry/
+poetry.lock
+
+# =========================
+# 💻 IDE / Editor
+# =========================
+.vscode/
+.vscode/*
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# =========================
+# 🧪 Test / Coverage
+# =========================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# =========================
+# 🧱 Static / Build
+# =========================
+staticfiles/
+static_root/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# 🧪 MyPy / Type Checking
+# =========================
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# =========================
+# 🧹 Diğer
+# =========================
+*.DS_Store
+Thumbs.db
